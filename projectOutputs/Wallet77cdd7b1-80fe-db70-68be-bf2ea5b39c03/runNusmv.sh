@@ -1,0 +1,1 @@
+./verificationTools/nuXmv -r /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/Wallet77cdd7b1-80fe-db70-68be-bf2ea5b39c03/Wallet.smv >> /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/Wallet77cdd7b1-80fe-db70-68be-bf2ea5b39c03/output.txt

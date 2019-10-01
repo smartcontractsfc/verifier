@@ -1,0 +1,272 @@
+model LogicContractModel
+
+	port type syncPort
+
+  connector type SINGLE(syncPort p1)
+    define p1
+  end
+
+atomic type LogicContract
+
+
+export port syncPort agetBalanceOfLogicContract_guard 
+export port syncPort a1 
+export port syncPort agetPayOut_guard 
+export port syncPort a3 
+export port syncPort a_getPayOut_guard 
+export port syncPort a_getPayOut_revert 
+export port syncPort a_getPayOut_no_revert 
+export port syncPort a7 
+export port syncPort a8 
+export port syncPort a9 
+export port syncPort a10 
+export port syncPort asetNewPriceToItem_guard 
+export port syncPort a12 
+export port syncPort adestroyLogicContract_guard 
+export port syncPort a14 
+export port syncPort abuyShip_guard 
+export port syncPort a16 
+export port syncPort a17 
+export port syncPort a18 
+export port syncPort a19 
+export port syncPort a20 
+export port syncPort a21 
+export port syncPort a22 
+export port syncPort a23 
+export port syncPort a24 
+export port syncPort a25 
+export port syncPort awithdrawRefund_guard 
+export port syncPort awithdrawRefund_revert 
+export port syncPort awithdrawRefund_no_revert 
+export port syncPort a29 
+export port syncPort a30 
+export port syncPort a31 
+export port syncPort a32 
+export port syncPort a33 
+export port syncPort acheckRefundExistanceByOwner_guard 
+export port syncPort a35 
+export port syncPort agetOwnerByShipId_guard 
+export port syncPort a37 
+export port syncPort agetShipType_guard 
+export port syncPort a39 
+export port syncPort agetUsersShipsIds_guard 
+export port syncPort a41 
+export port syncPort agetShipPriceById_guard 
+export port syncPort a43 
+export port syncPort agetShipsIds_guard 
+export port syncPort a45 
+export port syncPort agetShipById_guard 
+export port syncPort a47 
+
+  place  InitialState,  getBalanceOfLogicContract,  getPayOut,  _getPayOut,  _getPayOut_no_revert,  s5_T,  s6_1,  setNewPriceToItem,  destroyLogicContract,  buyShip,  s10_1,  s10_2,  s10_3,  s10_4,  s14_T,  s15_1,  s16_T,  withdrawRefund,  withdrawRefund_no_revert,  s19_1,  s20_T,  s21_1,  checkRefundExistanceByOwner,  getOwnerByShipId,  getShipType,  getUsersShipsIds,  getShipPriceById,  getShipsIds,  getShipById 
+
+initial to InitialState 
+
+
+on agetBalanceOfLogicContract_guard from InitialState to getBalanceOfLogicContract
+
+on a1 from getBalanceOfLogicContract to InitialState
+
+on agetPayOut_guard from InitialState to getPayOut
+
+on a3 from getPayOut to InitialState
+
+on a_getPayOut_guard from InitialState to _getPayOut
+
+on a_getPayOut_revert from _getPayOut to InitialState
+
+on a_getPayOut_no_revert from _getPayOut to _getPayOut_no_revert
+
+on a7 from _getPayOut_no_revert to s5_T
+
+on a8 from s5_T to s6_1
+
+on a9 from s6_1 to InitialState
+
+on a10 from _getPayOut_no_revert to InitialState
+
+on asetNewPriceToItem_guard from InitialState to setNewPriceToItem
+
+on a12 from setNewPriceToItem to InitialState
+
+on adestroyLogicContract_guard from InitialState to destroyLogicContract
+
+on a14 from destroyLogicContract to InitialState
+
+on abuyShip_guard from InitialState to buyShip
+
+on a16 from buyShip to s10_1
+
+on a17 from s10_1 to s10_2
+
+on a18 from s10_2 to s10_3
+
+on a19 from s10_3 to s14_T
+
+on a20 from s14_T to s15_1
+
+on a21 from s15_1 to s16_T
+
+on a22 from s16_T to s10_4
+
+on a23 from s15_1 to s10_4
+
+on a24 from s10_3 to s10_4
+
+on a25 from s10_4 to InitialState
+
+on awithdrawRefund_guard from InitialState to withdrawRefund
+
+on awithdrawRefund_revert from withdrawRefund to InitialState
+
+on awithdrawRefund_no_revert from withdrawRefund to withdrawRefund_no_revert
+
+on a29 from withdrawRefund_no_revert to s19_1
+
+on a30 from s19_1 to s20_T
+
+on a31 from s20_T to s21_1
+
+on a32 from s21_1 to InitialState
+
+on a33 from s19_1 to InitialState
+
+on acheckRefundExistanceByOwner_guard from InitialState to checkRefundExistanceByOwner
+
+on a35 from checkRefundExistanceByOwner to InitialState
+
+on agetOwnerByShipId_guard from InitialState to getOwnerByShipId
+
+on a37 from getOwnerByShipId to InitialState
+
+on agetShipType_guard from InitialState to getShipType
+
+on a39 from getShipType to InitialState
+
+on agetUsersShipsIds_guard from InitialState to getUsersShipsIds
+
+on a41 from getUsersShipsIds to InitialState
+
+on agetShipPriceById_guard from InitialState to getShipPriceById
+
+on a43 from getShipPriceById to InitialState
+
+on agetShipsIds_guard from InitialState to getShipsIds
+
+on a45 from getShipsIds to InitialState
+
+on agetShipById_guard from InitialState to getShipById
+
+on a47 from getShipById to InitialState
+
+
+end
+
+compound type globModel
+
+  component LogicContract BAUC
+
+  
+  connector SINGLE BAUC_agetBalanceOfLogicContract_guard ( BAUC.agetBalanceOfLogicContract_guard )
+  
+  connector SINGLE BAUC_a1 ( BAUC.a1 )
+  
+  connector SINGLE BAUC_agetPayOut_guard ( BAUC.agetPayOut_guard )
+  
+  connector SINGLE BAUC_a3 ( BAUC.a3 )
+  
+  connector SINGLE BAUC_a_getPayOut_guard ( BAUC.a_getPayOut_guard )
+  
+  connector SINGLE BAUC_a_getPayOut_revert ( BAUC.a_getPayOut_revert )
+  
+  connector SINGLE BAUC_a_getPayOut_no_revert ( BAUC.a_getPayOut_no_revert )
+  
+  connector SINGLE BAUC_a7 ( BAUC.a7 )
+  
+  connector SINGLE BAUC_a8 ( BAUC.a8 )
+  
+  connector SINGLE BAUC_a9 ( BAUC.a9 )
+  
+  connector SINGLE BAUC_a10 ( BAUC.a10 )
+  
+  connector SINGLE BAUC_asetNewPriceToItem_guard ( BAUC.asetNewPriceToItem_guard )
+  
+  connector SINGLE BAUC_a12 ( BAUC.a12 )
+  
+  connector SINGLE BAUC_adestroyLogicContract_guard ( BAUC.adestroyLogicContract_guard )
+  
+  connector SINGLE BAUC_a14 ( BAUC.a14 )
+  
+  connector SINGLE BAUC_abuyShip_guard ( BAUC.abuyShip_guard )
+  
+  connector SINGLE BAUC_a16 ( BAUC.a16 )
+  
+  connector SINGLE BAUC_a17 ( BAUC.a17 )
+  
+  connector SINGLE BAUC_a18 ( BAUC.a18 )
+  
+  connector SINGLE BAUC_a19 ( BAUC.a19 )
+  
+  connector SINGLE BAUC_a20 ( BAUC.a20 )
+  
+  connector SINGLE BAUC_a21 ( BAUC.a21 )
+  
+  connector SINGLE BAUC_a22 ( BAUC.a22 )
+  
+  connector SINGLE BAUC_a23 ( BAUC.a23 )
+  
+  connector SINGLE BAUC_a24 ( BAUC.a24 )
+  
+  connector SINGLE BAUC_a25 ( BAUC.a25 )
+  
+  connector SINGLE BAUC_awithdrawRefund_guard ( BAUC.awithdrawRefund_guard )
+  
+  connector SINGLE BAUC_awithdrawRefund_revert ( BAUC.awithdrawRefund_revert )
+  
+  connector SINGLE BAUC_awithdrawRefund_no_revert ( BAUC.awithdrawRefund_no_revert )
+  
+  connector SINGLE BAUC_a29 ( BAUC.a29 )
+  
+  connector SINGLE BAUC_a30 ( BAUC.a30 )
+  
+  connector SINGLE BAUC_a31 ( BAUC.a31 )
+  
+  connector SINGLE BAUC_a32 ( BAUC.a32 )
+  
+  connector SINGLE BAUC_a33 ( BAUC.a33 )
+  
+  connector SINGLE BAUC_acheckRefundExistanceByOwner_guard ( BAUC.acheckRefundExistanceByOwner_guard )
+  
+  connector SINGLE BAUC_a35 ( BAUC.a35 )
+  
+  connector SINGLE BAUC_agetOwnerByShipId_guard ( BAUC.agetOwnerByShipId_guard )
+  
+  connector SINGLE BAUC_a37 ( BAUC.a37 )
+  
+  connector SINGLE BAUC_agetShipType_guard ( BAUC.agetShipType_guard )
+  
+  connector SINGLE BAUC_a39 ( BAUC.a39 )
+  
+  connector SINGLE BAUC_agetUsersShipsIds_guard ( BAUC.agetUsersShipsIds_guard )
+  
+  connector SINGLE BAUC_a41 ( BAUC.a41 )
+  
+  connector SINGLE BAUC_agetShipPriceById_guard ( BAUC.agetShipPriceById_guard )
+  
+  connector SINGLE BAUC_a43 ( BAUC.a43 )
+  
+  connector SINGLE BAUC_agetShipsIds_guard ( BAUC.agetShipsIds_guard )
+  
+  connector SINGLE BAUC_a45 ( BAUC.a45 )
+  
+  connector SINGLE BAUC_agetShipById_guard ( BAUC.agetShipById_guard )
+  
+  connector SINGLE BAUC_a47 ( BAUC.a47 )
+  
+
+  end
+
+  component globModel Root
+
+  end
+

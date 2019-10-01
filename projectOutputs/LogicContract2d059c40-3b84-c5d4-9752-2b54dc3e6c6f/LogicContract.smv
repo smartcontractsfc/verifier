@@ -1,0 +1,268 @@
+MODULE BAUC(active_interaction)
+
+	VAR
+		NuPagetBalanceOfLogicContract_guard		:		boolean;
+		NuPa1		:		boolean;
+		NuPagetPayOut_guard		:		boolean;
+		NuPa3		:		boolean;
+		NuPa_getPayOut_guard		:		boolean;
+		NuPa_getPayOut_revert		:		boolean;
+		NuPa_getPayOut_no_revert		:		boolean;
+		NuPa7		:		boolean;
+		NuPa8		:		boolean;
+		NuPa9		:		boolean;
+		NuPa10		:		boolean;
+		NuPasetNewPriceToItem_guard		:		boolean;
+		NuPa12		:		boolean;
+		NuPadestroyLogicContract_guard		:		boolean;
+		NuPa14		:		boolean;
+		NuPabuyShip_guard		:		boolean;
+		NuPa16		:		boolean;
+		NuPa17		:		boolean;
+		NuPa18		:		boolean;
+		NuPa19		:		boolean;
+		NuPa20		:		boolean;
+		NuPa21		:		boolean;
+		NuPa22		:		boolean;
+		NuPa23		:		boolean;
+		NuPa24		:		boolean;
+		NuPa25		:		boolean;
+		NuPawithdrawRefund_guard		:		boolean;
+		NuPawithdrawRefund_revert		:		boolean;
+		NuPawithdrawRefund_no_revert		:		boolean;
+		NuPa29		:		boolean;
+		NuPa30		:		boolean;
+		NuPa31		:		boolean;
+		NuPa32		:		boolean;
+		NuPa33		:		boolean;
+		NuPacheckRefundExistanceByOwner_guard		:		boolean;
+		NuPa35		:		boolean;
+		NuPagetOwnerByShipId_guard		:		boolean;
+		NuPa37		:		boolean;
+		NuPagetShipType_guard		:		boolean;
+		NuPa39		:		boolean;
+		NuPagetUsersShipsIds_guard		:		boolean;
+		NuPa41		:		boolean;
+		NuPagetShipPriceById_guard		:		boolean;
+		NuPa43		:		boolean;
+		NuPagetShipsIds_guard		:		boolean;
+		NuPa45		:		boolean;
+		NuPagetShipById_guard		:		boolean;
+		NuPa47		:		boolean;
+		Nuplace		:		{NuSInitialState, NuSgetBalanceOfLogicContract, NuSgetPayOut, NuS_getPayOut, NuS_getPayOut_no_revert, NuSs5_T, NuSs6_1, NuSsetNewPriceToItem, NuSdestroyLogicContract, NuSbuyShip, NuSs10_1, NuSs10_2, NuSs10_3, NuSs10_4, NuSs14_T, NuSs15_1, NuSs16_T, NuSwithdrawRefund, NuSwithdrawRefund_no_revert, NuSs19_1, NuSs20_T, NuSs21_1, NuScheckRefundExistanceByOwner, NuSgetOwnerByShipId, NuSgetShipType, NuSgetUsersShipsIds, NuSgetShipPriceById, NuSgetShipsIds, NuSgetShipById};
+
+
+	INIT
+		( (Nuplace) = (NuSInitialState) );
+
+	INVAR
+		( (NuPa_getPayOut_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPagetUsersShipsIds_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPawithdrawRefund_no_revert) <-> (( (Nuplace) = (NuSwithdrawRefund) )) ) &
+		( (NuPagetShipsIds_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPawithdrawRefund_revert) <-> (( (Nuplace) = (NuSwithdrawRefund) )) ) &
+		( (NuPa29) <-> (( (Nuplace) = (NuSwithdrawRefund_no_revert) )) ) &
+		( (NuPabuyShip_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa12) <-> (( (Nuplace) = (NuSsetNewPriceToItem) )) ) &
+		( (NuPa35) <-> (( (Nuplace) = (NuScheckRefundExistanceByOwner) )) ) &
+		( (NuPa10) <-> (( (Nuplace) = (NuS_getPayOut_no_revert) )) ) &
+		( (NuPa32) <-> (( (Nuplace) = (NuSs21_1) )) ) &
+		( (NuPa_getPayOut_revert) <-> (( (Nuplace) = (NuS_getPayOut) )) ) &
+		( (NuPasetNewPriceToItem_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa33) <-> (( (Nuplace) = (NuSs19_1) )) ) &
+		( (NuPa16) <-> (( (Nuplace) = (NuSbuyShip) )) ) &
+		( (NuPa17) <-> (( (Nuplace) = (NuSs10_1) )) ) &
+		( (NuPa39) <-> (( (Nuplace) = (NuSgetShipType) )) ) &
+		( (NuPa14) <-> (( (Nuplace) = (NuSdestroyLogicContract) )) ) &
+		( (NuPa37) <-> (( (Nuplace) = (NuSgetOwnerByShipId) )) ) &
+		( (NuPagetPayOut_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa30) <-> (( (Nuplace) = (NuSs19_1) )) ) &
+		( (NuPagetOwnerByShipId_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa31) <-> (( (Nuplace) = (NuSs20_T) )) ) &
+		( (NuPa9) <-> (( (Nuplace) = (NuSs6_1) )) ) &
+		( (NuPa7) <-> (( (Nuplace) = (NuS_getPayOut_no_revert) )) ) &
+		( (NuPadestroyLogicContract_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa8) <-> (( (Nuplace) = (NuSs5_T) )) ) &
+		( (NuPa3) <-> (( (Nuplace) = (NuSgetPayOut) )) ) &
+		( (NuPagetShipPriceById_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa1) <-> (( (Nuplace) = (NuSgetBalanceOfLogicContract) )) ) &
+		( (NuPawithdrawRefund_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa18) <-> (( (Nuplace) = (NuSs10_2) )) ) &
+		( (NuPa19) <-> (( (Nuplace) = (NuSs10_3) )) ) &
+		( (NuPagetBalanceOfLogicContract_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa23) <-> (( (Nuplace) = (NuSs15_1) )) ) &
+		( (NuPa45) <-> (( (Nuplace) = (NuSgetShipsIds) )) ) &
+		( (NuPa24) <-> (( (Nuplace) = (NuSs10_3) )) ) &
+		( (NuPacheckRefundExistanceByOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa21) <-> (( (Nuplace) = (NuSs15_1) )) ) &
+		( (NuPa43) <-> (( (Nuplace) = (NuSgetShipPriceById) )) ) &
+		( (NuPa22) <-> (( (Nuplace) = (NuSs16_T) )) ) &
+		( (NuPagetShipType_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa_getPayOut_no_revert) <-> (( (Nuplace) = (NuS_getPayOut) )) ) &
+		( (NuPa25) <-> (( (Nuplace) = (NuSs10_4) )) ) &
+		( (NuPa47) <-> (( (Nuplace) = (NuSgetShipById) )) ) &
+		( (NuPa41) <-> (( (Nuplace) = (NuSgetUsersShipsIds) )) ) &
+		( (NuPa20) <-> (( (Nuplace) = (NuSs14_T) )) ) &
+		( (NuPagetShipById_guard) <-> (( (Nuplace) = (NuSInitialState) )) );
+
+	TRANS
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetBalanceOfLogicContract) )) )) & (( (active_interaction) = (NuI1) )) ) |
+		( (( (( (Nuplace) = (NuSgetBalanceOfLogicContract) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI2) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetPayOut) )) )) & (( (active_interaction) = (NuI3) )) ) |
+		( (( (( (Nuplace) = (NuSgetPayOut) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI4) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuS_getPayOut) )) )) & (( (active_interaction) = (NuI5) )) ) |
+		( (( (( (Nuplace) = (NuS_getPayOut) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI6) )) ) |
+		( (( (( (Nuplace) = (NuS_getPayOut) )) & (( (next(Nuplace)) = (NuS_getPayOut_no_revert) )) )) & (( (active_interaction) = (NuI7) )) ) |
+		( (( (( (Nuplace) = (NuS_getPayOut_no_revert) )) & (( (next(Nuplace)) = (NuSs5_T) )) )) & (( (active_interaction) = (NuI8) )) ) |
+		( (( (( (Nuplace) = (NuSs5_T) )) & (( (next(Nuplace)) = (NuSs6_1) )) )) & (( (active_interaction) = (NuI9) )) ) |
+		( (( (( (Nuplace) = (NuSs6_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI10) )) ) |
+		( (( (( (Nuplace) = (NuS_getPayOut_no_revert) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI11) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSsetNewPriceToItem) )) )) & (( (active_interaction) = (NuI12) )) ) |
+		( (( (( (Nuplace) = (NuSsetNewPriceToItem) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI13) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSdestroyLogicContract) )) )) & (( (active_interaction) = (NuI14) )) ) |
+		( (( (( (Nuplace) = (NuSdestroyLogicContract) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI15) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSbuyShip) )) )) & (( (active_interaction) = (NuI16) )) ) |
+		( (( (( (Nuplace) = (NuSbuyShip) )) & (( (next(Nuplace)) = (NuSs10_1) )) )) & (( (active_interaction) = (NuI17) )) ) |
+		( (( (( (Nuplace) = (NuSs10_1) )) & (( (next(Nuplace)) = (NuSs10_2) )) )) & (( (active_interaction) = (NuI18) )) ) |
+		( (( (( (Nuplace) = (NuSs10_2) )) & (( (next(Nuplace)) = (NuSs10_3) )) )) & (( (active_interaction) = (NuI19) )) ) |
+		( (( (( (Nuplace) = (NuSs10_3) )) & (( (next(Nuplace)) = (NuSs14_T) )) )) & (( (active_interaction) = (NuI20) )) ) |
+		( (( (( (Nuplace) = (NuSs14_T) )) & (( (next(Nuplace)) = (NuSs15_1) )) )) & (( (active_interaction) = (NuI21) )) ) |
+		( (( (( (Nuplace) = (NuSs15_1) )) & (( (next(Nuplace)) = (NuSs16_T) )) )) & (( (active_interaction) = (NuI22) )) ) |
+		( (( (( (Nuplace) = (NuSs16_T) )) & (( (next(Nuplace)) = (NuSs10_4) )) )) & (( (active_interaction) = (NuI23) )) ) |
+		( (( (( (Nuplace) = (NuSs15_1) )) & (( (next(Nuplace)) = (NuSs10_4) )) )) & (( (active_interaction) = (NuI24) )) ) |
+		( (( (( (Nuplace) = (NuSs10_3) )) & (( (next(Nuplace)) = (NuSs10_4) )) )) & (( (active_interaction) = (NuI25) )) ) |
+		( (( (( (Nuplace) = (NuSs10_4) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI26) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSwithdrawRefund) )) )) & (( (active_interaction) = (NuI27) )) ) |
+		( (( (( (Nuplace) = (NuSwithdrawRefund) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI28) )) ) |
+		( (( (( (Nuplace) = (NuSwithdrawRefund) )) & (( (next(Nuplace)) = (NuSwithdrawRefund_no_revert) )) )) & (( (active_interaction) = (NuI29) )) ) |
+		( (( (( (Nuplace) = (NuSwithdrawRefund_no_revert) )) & (( (next(Nuplace)) = (NuSs19_1) )) )) & (( (active_interaction) = (NuI30) )) ) |
+		( (( (( (Nuplace) = (NuSs19_1) )) & (( (next(Nuplace)) = (NuSs20_T) )) )) & (( (active_interaction) = (NuI31) )) ) |
+		( (( (( (Nuplace) = (NuSs20_T) )) & (( (next(Nuplace)) = (NuSs21_1) )) )) & (( (active_interaction) = (NuI32) )) ) |
+		( (( (( (Nuplace) = (NuSs21_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI33) )) ) |
+		( (( (( (Nuplace) = (NuSs19_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI34) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuScheckRefundExistanceByOwner) )) )) & (( (active_interaction) = (NuI35) )) ) |
+		( (( (( (Nuplace) = (NuScheckRefundExistanceByOwner) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI36) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetOwnerByShipId) )) )) & (( (active_interaction) = (NuI37) )) ) |
+		( (( (( (Nuplace) = (NuSgetOwnerByShipId) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI38) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetShipType) )) )) & (( (active_interaction) = (NuI39) )) ) |
+		( (( (( (Nuplace) = (NuSgetShipType) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI40) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetUsersShipsIds) )) )) & (( (active_interaction) = (NuI41) )) ) |
+		( (( (( (Nuplace) = (NuSgetUsersShipsIds) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI42) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetShipPriceById) )) )) & (( (active_interaction) = (NuI43) )) ) |
+		( (( (( (Nuplace) = (NuSgetShipPriceById) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI44) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetShipsIds) )) )) & (( (active_interaction) = (NuI45) )) ) |
+		( (( (( (Nuplace) = (NuSgetShipsIds) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI46) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetShipById) )) )) & (( (active_interaction) = (NuI47) )) ) |
+		( (( (( (Nuplace) = (NuSgetShipById) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI48) )) ) |
+		( (( (active_interaction) != (NuI48) )) & (( (( (active_interaction) != (NuI47) )) & (( (( (active_interaction) != (NuI46) )) & (( (( (active_interaction) != (NuI45) )) & (( (( (active_interaction) != (NuI44) )) & (( (( (active_interaction) != (NuI43) )) & (( (( (active_interaction) != (NuI42) )) & (( (( (active_interaction) != (NuI41) )) & (( (( (active_interaction) != (NuI40) )) & (( (( (active_interaction) != (NuI39) )) & (( (( (active_interaction) != (NuI38) )) & (( (( (active_interaction) != (NuI37) )) & (( (( (active_interaction) != (NuI36) )) & (( (( (active_interaction) != (NuI35) )) & (( (( (active_interaction) != (NuI34) )) & (( (( (active_interaction) != (NuI33) )) & (( (( (active_interaction) != (NuI32) )) & (( (( (active_interaction) != (NuI31) )) & (( (( (active_interaction) != (NuI30) )) & (( (( (active_interaction) != (NuI29) )) & (( (( (active_interaction) != (NuI28) )) & (( (( (active_interaction) != (NuI27) )) & (( (( (active_interaction) != (NuI26) )) & (( (( (active_interaction) != (NuI25) )) & (( (( (active_interaction) != (NuI24) )) & (( (( (active_interaction) != (NuI23) )) & (( (( (active_interaction) != (NuI22) )) & (( (( (active_interaction) != (NuI21) )) & (( (( (active_interaction) != (NuI20) )) & (( (( (active_interaction) != (NuI19) )) & (( (( (active_interaction) != (NuI18) )) & (( (( (active_interaction) != (NuI17) )) & (( (( (active_interaction) != (NuI16) )) & (( (( (active_interaction) != (NuI15) )) & (( (( (active_interaction) != (NuI14) )) & (( (( (active_interaction) != (NuI13) )) & (( (( (active_interaction) != (NuI12) )) & (( (( (active_interaction) != (NuI11) )) & (( (( (active_interaction) != (NuI10) )) & (( (( (active_interaction) != (NuI9) )) & (( (( (active_interaction) != (NuI8) )) & (( (( (active_interaction) != (NuI7) )) & (( (( (active_interaction) != (NuI6) )) & (( (( (active_interaction) != (NuI5) )) & (( (( (active_interaction) != (NuI4) )) & (( (( (active_interaction) != (NuI3) )) & (( (( (active_interaction) != (NuI2) )) & (( (( (active_interaction) != (NuI1) )) & (( (next(Nuplace)) = (Nuplace) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) );
+
+
+MODULE main
+
+	VAR
+		NuInteraction		:		{NuI1, NuI2, NuI3, NuI4, NuI5, NuI6, NuI7, NuI8, NuI9, NuI10, NuI11, NuI12, NuI13, NuI14, NuI15, NuI16, NuI17, NuI18, NuI19, NuI20, NuI21, NuI22, NuI23, NuI24, NuI25, NuI26, NuI27, NuI28, NuI29, NuI30, NuI31, NuI32, NuI33, NuI34, NuI35, NuI36, NuI37, NuI38, NuI39, NuI40, NuI41, NuI42, NuI43, NuI44, NuI45, NuI46, NuI47, NuI48};
+		bauc	:	BAUC(NuInteraction);
+
+	DEFINE
+		BAUC_a41		:=		bauc.NuPa41;
+		BAUC_a29		:=		bauc.NuPa29;
+		BAUC_a33		:=		bauc.NuPa33;
+		BAUC_agetShipById_guard		:=		bauc.NuPagetShipById_guard;
+		BAUC_a9		:=		bauc.NuPa9;
+		BAUC_a14		:=		bauc.NuPa14;
+		BAUC_awithdrawRefund_guard		:=		bauc.NuPawithdrawRefund_guard;
+		BAUC_abuyShip_guard		:=		bauc.NuPabuyShip_guard;
+		BAUC_agetShipsIds_guard		:=		bauc.NuPagetShipsIds_guard;
+		BAUC_agetShipPriceById_guard		:=		bauc.NuPagetShipPriceById_guard;
+		BAUC_a25		:=		bauc.NuPa25;
+		BAUC_a23		:=		bauc.NuPa23;
+		BAUC_a39		:=		bauc.NuPa39;
+		BAUC_agetPayOut_guard		:=		bauc.NuPagetPayOut_guard;
+		BAUC_a32		:=		bauc.NuPa32;
+		BAUC_acheckRefundExistanceByOwner_guard		:=		bauc.NuPacheckRefundExistanceByOwner_guard;
+		BAUC_agetUsersShipsIds_guard		:=		bauc.NuPagetUsersShipsIds_guard;
+		BAUC_a47		:=		bauc.NuPa47;
+		BAUC_asetNewPriceToItem_guard		:=		bauc.NuPasetNewPriceToItem_guard;
+		BAUC_a16		:=		bauc.NuPa16;
+		BAUC_a8		:=		bauc.NuPa8;
+		BAUC_a17		:=		bauc.NuPa17;
+		BAUC_a7		:=		bauc.NuPa7;
+		BAUC_awithdrawRefund_no_revert		:=		bauc.NuPawithdrawRefund_no_revert;
+		BAUC_a22		:=		bauc.NuPa22;
+		BAUC_awithdrawRefund_revert		:=		bauc.NuPawithdrawRefund_revert;
+		BAUC_a37		:=		bauc.NuPa37;
+		BAUC_a30		:=		bauc.NuPa30;
+		BAUC_adestroyLogicContract_guard		:=		bauc.NuPadestroyLogicContract_guard;
+		BAUC_a43		:=		bauc.NuPa43;
+		BAUC_a10		:=		bauc.NuPa10;
+		BAUC_agetOwnerByShipId_guard		:=		bauc.NuPagetOwnerByShipId_guard;
+		BAUC_a19		:=		bauc.NuPa19;
+		BAUC_a31		:=		bauc.NuPa31;
+		BAUC_a_getPayOut_no_revert		:=		bauc.NuPa_getPayOut_no_revert;
+		BAUC_a12		:=		bauc.NuPa12;
+		BAUC_a35		:=		bauc.NuPa35;
+		BAUC_a3		:=		bauc.NuPa3;
+		BAUC_a20		:=		bauc.NuPa20;
+		BAUC_agetShipType_guard		:=		bauc.NuPagetShipType_guard;
+		BAUC_a45		:=		bauc.NuPa45;
+		BAUC_a_getPayOut_revert		:=		bauc.NuPa_getPayOut_revert;
+		BAUC_a18		:=		bauc.NuPa18;
+		BAUC_a1		:=		bauc.NuPa1;
+		BAUC_a21		:=		bauc.NuPa21;
+		BAUC_a24		:=		bauc.NuPa24;
+		BAUC_agetBalanceOfLogicContract_guard		:=		bauc.NuPagetBalanceOfLogicContract_guard;
+		BAUC_a_getPayOut_guard		:=		bauc.NuPa_getPayOut_guard;
+
+
+	INVAR
+		( (( (NuInteraction) = (NuI42) )) -> (BAUC_a41) ) &
+		( (( (NuInteraction) = (NuI30) )) -> (BAUC_a29) ) &
+		( (( (NuInteraction) = (NuI34) )) -> (BAUC_a33) ) &
+		( (( (NuInteraction) = (NuI47) )) -> (BAUC_agetShipById_guard) ) &
+		( (( (NuInteraction) = (NuI10) )) -> (BAUC_a9) ) &
+		( (( (NuInteraction) = (NuI15) )) -> (BAUC_a14) ) &
+		( (( (NuInteraction) = (NuI27) )) -> (BAUC_awithdrawRefund_guard) ) &
+		( (( (NuInteraction) = (NuI16) )) -> (BAUC_abuyShip_guard) ) &
+		( (( (NuInteraction) = (NuI45) )) -> (BAUC_agetShipsIds_guard) ) &
+		( (( (NuInteraction) = (NuI43) )) -> (BAUC_agetShipPriceById_guard) ) &
+		( (( (NuInteraction) = (NuI26) )) -> (BAUC_a25) ) &
+		( (( (NuInteraction) = (NuI24) )) -> (BAUC_a23) ) &
+		( (( (NuInteraction) = (NuI40) )) -> (BAUC_a39) ) &
+		( (( (NuInteraction) = (NuI3) )) -> (BAUC_agetPayOut_guard) ) &
+		( (( (NuInteraction) = (NuI33) )) -> (BAUC_a32) ) &
+		( (( (NuInteraction) = (NuI35) )) -> (BAUC_acheckRefundExistanceByOwner_guard) ) &
+		( (( (NuInteraction) = (NuI41) )) -> (BAUC_agetUsersShipsIds_guard) ) &
+		( (( (NuInteraction) = (NuI48) )) -> (BAUC_a47) ) &
+		( (( (NuInteraction) = (NuI12) )) -> (BAUC_asetNewPriceToItem_guard) ) &
+		( (( (NuInteraction) = (NuI17) )) -> (BAUC_a16) ) &
+		( (( (NuInteraction) = (NuI9) )) -> (BAUC_a8) ) &
+		( (( (NuInteraction) = (NuI18) )) -> (BAUC_a17) ) &
+		( (( (NuInteraction) = (NuI8) )) -> (BAUC_a7) ) &
+		( (( (NuInteraction) = (NuI29) )) -> (BAUC_awithdrawRefund_no_revert) ) &
+		( (( (NuInteraction) = (NuI23) )) -> (BAUC_a22) ) &
+		( (( (NuInteraction) = (NuI28) )) -> (BAUC_awithdrawRefund_revert) ) &
+		( (( (NuInteraction) = (NuI38) )) -> (BAUC_a37) ) &
+		( (( (NuInteraction) = (NuI31) )) -> (BAUC_a30) ) &
+		( (( (NuInteraction) = (NuI14) )) -> (BAUC_adestroyLogicContract_guard) ) &
+		( (( (NuInteraction) = (NuI44) )) -> (BAUC_a43) ) &
+		( (( (NuInteraction) = (NuI11) )) -> (BAUC_a10) ) &
+		( (( (NuInteraction) = (NuI37) )) -> (BAUC_agetOwnerByShipId_guard) ) &
+		( (( (NuInteraction) = (NuI20) )) -> (BAUC_a19) ) &
+		( (( (NuInteraction) = (NuI32) )) -> (BAUC_a31) ) &
+		( (( (NuInteraction) = (NuI7) )) -> (BAUC_a_getPayOut_no_revert) ) &
+		( (( (NuInteraction) = (NuI13) )) -> (BAUC_a12) ) &
+		( (( (NuInteraction) = (NuI36) )) -> (BAUC_a35) ) &
+		( (( (NuInteraction) = (NuI4) )) -> (BAUC_a3) ) &
+		( (( (NuInteraction) = (NuI21) )) -> (BAUC_a20) ) &
+		( (( (NuInteraction) = (NuI39) )) -> (BAUC_agetShipType_guard) ) &
+		( (( (NuInteraction) = (NuI46) )) -> (BAUC_a45) ) &
+		( (( (NuInteraction) = (NuI6) )) -> (BAUC_a_getPayOut_revert) ) &
+		( (( (NuInteraction) = (NuI19) )) -> (BAUC_a18) ) &
+		( (( (NuInteraction) = (NuI2) )) -> (BAUC_a1) ) &
+		( (( (NuInteraction) = (NuI22) )) -> (BAUC_a21) ) &
+		( (( (NuInteraction) = (NuI25) )) -> (BAUC_a24) ) &
+		( (( (NuInteraction) = (NuI1) )) -> (BAUC_agetBalanceOfLogicContract_guard) ) &
+		( (( (NuInteraction) = (NuI5) )) -> (BAUC_a_getPayOut_guard) );
+
+
+

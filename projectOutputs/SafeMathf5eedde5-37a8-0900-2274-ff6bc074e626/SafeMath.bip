@@ -1,0 +1,117 @@
+model SafeMathModel
+
+	port type syncPort
+
+  connector type SINGLE(syncPort p1)
+    define p1
+  end
+
+atomic type SafeMath
+
+
+export port syncPort amul_guard 
+export port syncPort a1 
+export port syncPort a2 
+export port syncPort a3 
+export port syncPort a4 
+export port syncPort a5 
+export port syncPort a6 
+export port syncPort adiv_guard 
+export port syncPort a8 
+export port syncPort a9 
+export port syncPort asub_guard 
+export port syncPort a11 
+export port syncPort a12 
+export port syncPort aadd_guard 
+export port syncPort a14 
+export port syncPort a15 
+export port syncPort a16 
+
+  place  InitialState,  mul,  s2_1,  s2_2,  s2_3,  s5_T,  div,  s7_1,  sub,  s9_1,  add,  s11_1,  s11_2 
+
+initial to InitialState 
+
+
+on amul_guard from InitialState to mul
+
+on a1 from mul to s5_T
+
+on a2 from s5_T to InitialState
+
+on a3 from mul to s2_1
+
+on a4 from s2_1 to s2_2
+
+on a5 from s2_2 to s2_3
+
+on a6 from s2_3 to InitialState
+
+on adiv_guard from InitialState to div
+
+on a8 from div to s7_1
+
+on a9 from s7_1 to InitialState
+
+on asub_guard from InitialState to sub
+
+on a11 from sub to s9_1
+
+on a12 from s9_1 to InitialState
+
+on aadd_guard from InitialState to add
+
+on a14 from add to s11_1
+
+on a15 from s11_1 to s11_2
+
+on a16 from s11_2 to InitialState
+
+
+end
+
+compound type globModel
+
+  component SafeMath BAUC
+
+  
+  connector SINGLE BAUC_amul_guard ( BAUC.amul_guard )
+  
+  connector SINGLE BAUC_a1 ( BAUC.a1 )
+  
+  connector SINGLE BAUC_a2 ( BAUC.a2 )
+  
+  connector SINGLE BAUC_a3 ( BAUC.a3 )
+  
+  connector SINGLE BAUC_a4 ( BAUC.a4 )
+  
+  connector SINGLE BAUC_a5 ( BAUC.a5 )
+  
+  connector SINGLE BAUC_a6 ( BAUC.a6 )
+  
+  connector SINGLE BAUC_adiv_guard ( BAUC.adiv_guard )
+  
+  connector SINGLE BAUC_a8 ( BAUC.a8 )
+  
+  connector SINGLE BAUC_a9 ( BAUC.a9 )
+  
+  connector SINGLE BAUC_asub_guard ( BAUC.asub_guard )
+  
+  connector SINGLE BAUC_a11 ( BAUC.a11 )
+  
+  connector SINGLE BAUC_a12 ( BAUC.a12 )
+  
+  connector SINGLE BAUC_aadd_guard ( BAUC.aadd_guard )
+  
+  connector SINGLE BAUC_a14 ( BAUC.a14 )
+  
+  connector SINGLE BAUC_a15 ( BAUC.a15 )
+  
+  connector SINGLE BAUC_a16 ( BAUC.a16 )
+  
+
+  end
+
+  component globModel Root
+
+  end
+

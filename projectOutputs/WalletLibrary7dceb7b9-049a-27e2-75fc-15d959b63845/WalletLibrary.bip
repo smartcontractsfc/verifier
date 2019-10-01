@@ -1,0 +1,622 @@
+model WalletLibraryModel
+
+	port type syncPort
+
+  connector type SINGLE(syncPort p1)
+    define p1
+  end
+
+atomic type WalletLibrary
+
+
+export port syncPort ainitMultiowned_guard 
+export port syncPort a1 
+export port syncPort a2 
+export port syncPort a3 
+export port syncPort a4 
+export port syncPort a5 
+export port syncPort a6 
+export port syncPort a7 
+export port syncPort a8 
+export port syncPort a9 
+export port syncPort a10 
+export port syncPort arevoke_guard 
+export port syncPort a12 
+export port syncPort a13 
+export port syncPort a14 
+export port syncPort a15 
+export port syncPort a16 
+export port syncPort a17 
+export port syncPort a18 
+export port syncPort a19 
+export port syncPort a20 
+export port syncPort a21 
+export port syncPort a22 
+export port syncPort achangeOwner_guard 
+export port syncPort a24 
+export port syncPort a25 
+export port syncPort a26 
+export port syncPort a27 
+export port syncPort a28 
+export port syncPort a29 
+export port syncPort a30 
+export port syncPort a31 
+export port syncPort a32 
+export port syncPort a33 
+export port syncPort a34 
+export port syncPort a35 
+export port syncPort akill_guard 
+export port syncPort a37 
+export port syncPort atoday_guard 
+export port syncPort a39 
+export port syncPort aclearPending_guard 
+export port syncPort a41 
+export port syncPort a42 
+export port syncPort a43 
+export port syncPort a44 
+export port syncPort a45 
+export port syncPort a46 
+export port syncPort a47 
+export port syncPort a48 
+export port syncPort a49 
+export port syncPort a50 
+export port syncPort aunderLimit_guard 
+export port syncPort a52 
+export port syncPort a53 
+export port syncPort a54 
+export port syncPort a55 
+export port syncPort a56 
+export port syncPort a57 
+export port syncPort a58 
+export port syncPort a59 
+export port syncPort a60 
+export port syncPort aaddOwner_guard 
+export port syncPort a62 
+export port syncPort a63 
+export port syncPort a64 
+export port syncPort a65 
+export port syncPort a66 
+export port syncPort a67 
+export port syncPort a68 
+export port syncPort a69 
+export port syncPort a70 
+export port syncPort a71 
+export port syncPort a72 
+export port syncPort a73 
+export port syncPort a74 
+export port syncPort a75 
+export port syncPort aremoveOwner_guard 
+export port syncPort a77 
+export port syncPort a78 
+export port syncPort a79 
+export port syncPort a80 
+export port syncPort a81 
+export port syncPort a82 
+export port syncPort a83 
+export port syncPort a84 
+export port syncPort a85 
+export port syncPort a86 
+export port syncPort a87 
+export port syncPort a88 
+export port syncPort achangeRequirement_guard 
+export port syncPort a90 
+export port syncPort a91 
+export port syncPort a92 
+export port syncPort a93 
+export port syncPort a94 
+export port syncPort a95 
+export port syncPort agetOwner_guard 
+export port syncPort a97 
+export port syncPort aisOwner_guard 
+export port syncPort a99 
+export port syncPort ahasConfirmed_guard 
+export port syncPort a101 
+export port syncPort a102 
+export port syncPort a103 
+export port syncPort a104 
+export port syncPort a105 
+export port syncPort a106 
+export port syncPort a107 
+export port syncPort ainitDaylimit_guard 
+export port syncPort a109 
+export port syncPort a110 
+export port syncPort asetDailyLimit_guard 
+export port syncPort a112 
+export port syncPort aresetSpentToday_guard 
+export port syncPort a114 
+export port syncPort ainitWallet_guard 
+export port syncPort a116 
+export port syncPort a117 
+
+  place  InitialState,  initMultiowned,  s2_1,  s2_2,  s2_3,  s2_4,  s6_I,  s6_C,  s6_B,  s9_1,  revoke,  s11_1,  s11_2,  s11_3,  s11_4,  s15_T,  s16_T,  s17_1,  s17_2,  changeOwner,  s20_1,  s20_2,  s20_3,  s20_4,  s20_5,  s20_6,  s20_7,  s27_T,  s28_T,  kill,  today,  clearPending,  s32_1,  s32_2,  s34_I,  s34_C,  s34_B,  s37_1,  s38_T,  underLimit,  s40_1,  s40_2,  s42_T,  s43_1,  s44_T,  s45_1,  addOwner,  s47_1,  s47_2,  s47_3,  s47_4,  s47_5,  s47_6,  s47_7,  s54_T,  s55_T,  s56_T,  removeOwner,  s58_1,  s58_2,  s58_3,  s58_4,  s58_5,  s58_6,  s58_7,  s65_T,  s66_T,  changeRequirement,  s68_1,  s68_2,  s68_3,  s71_T,  getOwner,  isOwner,  hasConfirmed,  s75_1,  s75_2,  s75_3,  s75_4,  s79_T,  initDaylimit,  s81_1,  setDailyLimit,  resetSpentToday,  initWallet,  s85_1 
+
+initial to InitialState 
+
+
+on ainitMultiowned_guard from InitialState to initMultiowned
+
+on a1 from initMultiowned to s2_1
+
+on a2 from s2_1 to s2_2
+
+on a3 from s2_2 to s2_3
+
+on a4 from s2_3 to s6_I
+
+on a5 from s6_I to s2_4
+
+on a6 from s6_I to s6_C
+
+on a7 from s6_C to s9_1
+
+on a8 from s9_1 to s6_B
+
+on a9 from s6_B to s6_I
+
+on a10 from s2_4 to InitialState
+
+on arevoke_guard from InitialState to revoke
+
+on a12 from revoke to s11_1
+
+on a13 from s11_1 to s15_T
+
+on a14 from s15_T to InitialState
+
+on a15 from s11_1 to s11_2
+
+on a16 from s11_2 to s11_3
+
+on a17 from s11_3 to s11_4
+
+on a18 from s11_4 to s16_T
+
+on a19 from s16_T to s17_1
+
+on a20 from s17_1 to s17_2
+
+on a21 from s17_2 to InitialState
+
+on a22 from s11_4 to InitialState
+
+on achangeOwner_guard from InitialState to changeOwner
+
+on a24 from changeOwner to s27_T
+
+on a25 from s27_T to InitialState
+
+on a26 from changeOwner to s20_1
+
+on a27 from s20_1 to s20_2
+
+on a28 from s20_2 to s28_T
+
+on a29 from s28_T to InitialState
+
+on a30 from s20_2 to s20_3
+
+on a31 from s20_3 to s20_4
+
+on a32 from s20_4 to s20_5
+
+on a33 from s20_5 to s20_6
+
+on a34 from s20_6 to s20_7
+
+on a35 from s20_7 to InitialState
+
+on akill_guard from InitialState to kill
+
+on a37 from kill to InitialState
+
+on atoday_guard from InitialState to today
+
+on a39 from today to InitialState
+
+on aclearPending_guard from InitialState to clearPending
+
+on a41 from clearPending to s32_1
+
+on a42 from s32_1 to s34_I
+
+on a43 from s34_I to s32_2
+
+on a44 from s34_I to s34_C
+
+on a45 from s34_C to s37_1
+
+on a46 from s37_1 to s38_T
+
+on a47 from s38_T to s34_B
+
+on a48 from s37_1 to s34_B
+
+on a49 from s34_B to s34_I
+
+on a50 from s32_2 to InitialState
+
+on aunderLimit_guard from InitialState to underLimit
+
+on a52 from underLimit to s42_T
+
+on a53 from s42_T to s43_1
+
+on a54 from s43_1 to s40_1
+
+on a55 from underLimit to s40_1
+
+on a56 from s40_1 to s44_T
+
+on a57 from s44_T to s45_1
+
+on a58 from s45_1 to InitialState
+
+on a59 from s40_1 to s40_2
+
+on a60 from s40_2 to InitialState
+
+on aaddOwner_guard from InitialState to addOwner
+
+on a62 from addOwner to s54_T
+
+on a63 from s54_T to InitialState
+
+on a64 from addOwner to s47_1
+
+on a65 from s47_1 to s47_2
+
+on a66 from s47_2 to s55_T
+
+on a67 from s55_T to s47_3
+
+on a68 from s47_2 to s47_3
+
+on a69 from s47_3 to s56_T
+
+on a70 from s56_T to InitialState
+
+on a71 from s47_3 to s47_4
+
+on a72 from s47_4 to s47_5
+
+on a73 from s47_5 to s47_6
+
+on a74 from s47_6 to s47_7
+
+on a75 from s47_7 to InitialState
+
+on aremoveOwner_guard from InitialState to removeOwner
+
+on a77 from removeOwner to s58_1
+
+on a78 from s58_1 to s65_T
+
+on a79 from s65_T to InitialState
+
+on a80 from s58_1 to s58_2
+
+on a81 from s58_2 to s66_T
+
+on a82 from s66_T to InitialState
+
+on a83 from s58_2 to s58_3
+
+on a84 from s58_3 to s58_4
+
+on a85 from s58_4 to s58_5
+
+on a86 from s58_5 to s58_6
+
+on a87 from s58_6 to s58_7
+
+on a88 from s58_7 to InitialState
+
+on achangeRequirement_guard from InitialState to changeRequirement
+
+on a90 from changeRequirement to s71_T
+
+on a91 from s71_T to InitialState
+
+on a92 from changeRequirement to s68_1
+
+on a93 from s68_1 to s68_2
+
+on a94 from s68_2 to s68_3
+
+on a95 from s68_3 to InitialState
+
+on agetOwner_guard from InitialState to getOwner
+
+on a97 from getOwner to InitialState
+
+on aisOwner_guard from InitialState to isOwner
+
+on a99 from isOwner to InitialState
+
+on ahasConfirmed_guard from InitialState to hasConfirmed
+
+on a101 from hasConfirmed to s75_1
+
+on a102 from s75_1 to s75_2
+
+on a103 from s75_2 to s79_T
+
+on a104 from s79_T to InitialState
+
+on a105 from s75_2 to s75_3
+
+on a106 from s75_3 to s75_4
+
+on a107 from s75_4 to InitialState
+
+on ainitDaylimit_guard from InitialState to initDaylimit
+
+on a109 from initDaylimit to s81_1
+
+on a110 from s81_1 to InitialState
+
+on asetDailyLimit_guard from InitialState to setDailyLimit
+
+on a112 from setDailyLimit to InitialState
+
+on aresetSpentToday_guard from InitialState to resetSpentToday
+
+on a114 from resetSpentToday to InitialState
+
+on ainitWallet_guard from InitialState to initWallet
+
+on a116 from initWallet to s85_1
+
+on a117 from s85_1 to InitialState
+
+
+end
+
+compound type globModel
+
+  component WalletLibrary BAUC
+
+  
+  connector SINGLE BAUC_ainitMultiowned_guard ( BAUC.ainitMultiowned_guard )
+  
+  connector SINGLE BAUC_a1 ( BAUC.a1 )
+  
+  connector SINGLE BAUC_a2 ( BAUC.a2 )
+  
+  connector SINGLE BAUC_a3 ( BAUC.a3 )
+  
+  connector SINGLE BAUC_a4 ( BAUC.a4 )
+  
+  connector SINGLE BAUC_a5 ( BAUC.a5 )
+  
+  connector SINGLE BAUC_a6 ( BAUC.a6 )
+  
+  connector SINGLE BAUC_a7 ( BAUC.a7 )
+  
+  connector SINGLE BAUC_a8 ( BAUC.a8 )
+  
+  connector SINGLE BAUC_a9 ( BAUC.a9 )
+  
+  connector SINGLE BAUC_a10 ( BAUC.a10 )
+  
+  connector SINGLE BAUC_arevoke_guard ( BAUC.arevoke_guard )
+  
+  connector SINGLE BAUC_a12 ( BAUC.a12 )
+  
+  connector SINGLE BAUC_a13 ( BAUC.a13 )
+  
+  connector SINGLE BAUC_a14 ( BAUC.a14 )
+  
+  connector SINGLE BAUC_a15 ( BAUC.a15 )
+  
+  connector SINGLE BAUC_a16 ( BAUC.a16 )
+  
+  connector SINGLE BAUC_a17 ( BAUC.a17 )
+  
+  connector SINGLE BAUC_a18 ( BAUC.a18 )
+  
+  connector SINGLE BAUC_a19 ( BAUC.a19 )
+  
+  connector SINGLE BAUC_a20 ( BAUC.a20 )
+  
+  connector SINGLE BAUC_a21 ( BAUC.a21 )
+  
+  connector SINGLE BAUC_a22 ( BAUC.a22 )
+  
+  connector SINGLE BAUC_achangeOwner_guard ( BAUC.achangeOwner_guard )
+  
+  connector SINGLE BAUC_a24 ( BAUC.a24 )
+  
+  connector SINGLE BAUC_a25 ( BAUC.a25 )
+  
+  connector SINGLE BAUC_a26 ( BAUC.a26 )
+  
+  connector SINGLE BAUC_a27 ( BAUC.a27 )
+  
+  connector SINGLE BAUC_a28 ( BAUC.a28 )
+  
+  connector SINGLE BAUC_a29 ( BAUC.a29 )
+  
+  connector SINGLE BAUC_a30 ( BAUC.a30 )
+  
+  connector SINGLE BAUC_a31 ( BAUC.a31 )
+  
+  connector SINGLE BAUC_a32 ( BAUC.a32 )
+  
+  connector SINGLE BAUC_a33 ( BAUC.a33 )
+  
+  connector SINGLE BAUC_a34 ( BAUC.a34 )
+  
+  connector SINGLE BAUC_a35 ( BAUC.a35 )
+  
+  connector SINGLE BAUC_akill_guard ( BAUC.akill_guard )
+  
+  connector SINGLE BAUC_a37 ( BAUC.a37 )
+  
+  connector SINGLE BAUC_atoday_guard ( BAUC.atoday_guard )
+  
+  connector SINGLE BAUC_a39 ( BAUC.a39 )
+  
+  connector SINGLE BAUC_aclearPending_guard ( BAUC.aclearPending_guard )
+  
+  connector SINGLE BAUC_a41 ( BAUC.a41 )
+  
+  connector SINGLE BAUC_a42 ( BAUC.a42 )
+  
+  connector SINGLE BAUC_a43 ( BAUC.a43 )
+  
+  connector SINGLE BAUC_a44 ( BAUC.a44 )
+  
+  connector SINGLE BAUC_a45 ( BAUC.a45 )
+  
+  connector SINGLE BAUC_a46 ( BAUC.a46 )
+  
+  connector SINGLE BAUC_a47 ( BAUC.a47 )
+  
+  connector SINGLE BAUC_a48 ( BAUC.a48 )
+  
+  connector SINGLE BAUC_a49 ( BAUC.a49 )
+  
+  connector SINGLE BAUC_a50 ( BAUC.a50 )
+  
+  connector SINGLE BAUC_aunderLimit_guard ( BAUC.aunderLimit_guard )
+  
+  connector SINGLE BAUC_a52 ( BAUC.a52 )
+  
+  connector SINGLE BAUC_a53 ( BAUC.a53 )
+  
+  connector SINGLE BAUC_a54 ( BAUC.a54 )
+  
+  connector SINGLE BAUC_a55 ( BAUC.a55 )
+  
+  connector SINGLE BAUC_a56 ( BAUC.a56 )
+  
+  connector SINGLE BAUC_a57 ( BAUC.a57 )
+  
+  connector SINGLE BAUC_a58 ( BAUC.a58 )
+  
+  connector SINGLE BAUC_a59 ( BAUC.a59 )
+  
+  connector SINGLE BAUC_a60 ( BAUC.a60 )
+  
+  connector SINGLE BAUC_aaddOwner_guard ( BAUC.aaddOwner_guard )
+  
+  connector SINGLE BAUC_a62 ( BAUC.a62 )
+  
+  connector SINGLE BAUC_a63 ( BAUC.a63 )
+  
+  connector SINGLE BAUC_a64 ( BAUC.a64 )
+  
+  connector SINGLE BAUC_a65 ( BAUC.a65 )
+  
+  connector SINGLE BAUC_a66 ( BAUC.a66 )
+  
+  connector SINGLE BAUC_a67 ( BAUC.a67 )
+  
+  connector SINGLE BAUC_a68 ( BAUC.a68 )
+  
+  connector SINGLE BAUC_a69 ( BAUC.a69 )
+  
+  connector SINGLE BAUC_a70 ( BAUC.a70 )
+  
+  connector SINGLE BAUC_a71 ( BAUC.a71 )
+  
+  connector SINGLE BAUC_a72 ( BAUC.a72 )
+  
+  connector SINGLE BAUC_a73 ( BAUC.a73 )
+  
+  connector SINGLE BAUC_a74 ( BAUC.a74 )
+  
+  connector SINGLE BAUC_a75 ( BAUC.a75 )
+  
+  connector SINGLE BAUC_aremoveOwner_guard ( BAUC.aremoveOwner_guard )
+  
+  connector SINGLE BAUC_a77 ( BAUC.a77 )
+  
+  connector SINGLE BAUC_a78 ( BAUC.a78 )
+  
+  connector SINGLE BAUC_a79 ( BAUC.a79 )
+  
+  connector SINGLE BAUC_a80 ( BAUC.a80 )
+  
+  connector SINGLE BAUC_a81 ( BAUC.a81 )
+  
+  connector SINGLE BAUC_a82 ( BAUC.a82 )
+  
+  connector SINGLE BAUC_a83 ( BAUC.a83 )
+  
+  connector SINGLE BAUC_a84 ( BAUC.a84 )
+  
+  connector SINGLE BAUC_a85 ( BAUC.a85 )
+  
+  connector SINGLE BAUC_a86 ( BAUC.a86 )
+  
+  connector SINGLE BAUC_a87 ( BAUC.a87 )
+  
+  connector SINGLE BAUC_a88 ( BAUC.a88 )
+  
+  connector SINGLE BAUC_achangeRequirement_guard ( BAUC.achangeRequirement_guard )
+  
+  connector SINGLE BAUC_a90 ( BAUC.a90 )
+  
+  connector SINGLE BAUC_a91 ( BAUC.a91 )
+  
+  connector SINGLE BAUC_a92 ( BAUC.a92 )
+  
+  connector SINGLE BAUC_a93 ( BAUC.a93 )
+  
+  connector SINGLE BAUC_a94 ( BAUC.a94 )
+  
+  connector SINGLE BAUC_a95 ( BAUC.a95 )
+  
+  connector SINGLE BAUC_agetOwner_guard ( BAUC.agetOwner_guard )
+  
+  connector SINGLE BAUC_a97 ( BAUC.a97 )
+  
+  connector SINGLE BAUC_aisOwner_guard ( BAUC.aisOwner_guard )
+  
+  connector SINGLE BAUC_a99 ( BAUC.a99 )
+  
+  connector SINGLE BAUC_ahasConfirmed_guard ( BAUC.ahasConfirmed_guard )
+  
+  connector SINGLE BAUC_a101 ( BAUC.a101 )
+  
+  connector SINGLE BAUC_a102 ( BAUC.a102 )
+  
+  connector SINGLE BAUC_a103 ( BAUC.a103 )
+  
+  connector SINGLE BAUC_a104 ( BAUC.a104 )
+  
+  connector SINGLE BAUC_a105 ( BAUC.a105 )
+  
+  connector SINGLE BAUC_a106 ( BAUC.a106 )
+  
+  connector SINGLE BAUC_a107 ( BAUC.a107 )
+  
+  connector SINGLE BAUC_ainitDaylimit_guard ( BAUC.ainitDaylimit_guard )
+  
+  connector SINGLE BAUC_a109 ( BAUC.a109 )
+  
+  connector SINGLE BAUC_a110 ( BAUC.a110 )
+  
+  connector SINGLE BAUC_asetDailyLimit_guard ( BAUC.asetDailyLimit_guard )
+  
+  connector SINGLE BAUC_a112 ( BAUC.a112 )
+  
+  connector SINGLE BAUC_aresetSpentToday_guard ( BAUC.aresetSpentToday_guard )
+  
+  connector SINGLE BAUC_a114 ( BAUC.a114 )
+  
+  connector SINGLE BAUC_ainitWallet_guard ( BAUC.ainitWallet_guard )
+  
+  connector SINGLE BAUC_a116 ( BAUC.a116 )
+  
+  connector SINGLE BAUC_a117 ( BAUC.a117 )
+  
+
+  end
+
+  component globModel Root
+
+  end
+

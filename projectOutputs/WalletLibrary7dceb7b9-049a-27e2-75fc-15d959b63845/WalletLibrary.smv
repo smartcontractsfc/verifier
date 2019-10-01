@@ -1,0 +1,618 @@
+MODULE BAUC(active_interaction)
+
+	VAR
+		NuPainitMultiowned_guard		:		boolean;
+		NuPa1		:		boolean;
+		NuPa2		:		boolean;
+		NuPa3		:		boolean;
+		NuPa4		:		boolean;
+		NuPa5		:		boolean;
+		NuPa6		:		boolean;
+		NuPa7		:		boolean;
+		NuPa8		:		boolean;
+		NuPa9		:		boolean;
+		NuPa10		:		boolean;
+		NuParevoke_guard		:		boolean;
+		NuPa12		:		boolean;
+		NuPa13		:		boolean;
+		NuPa14		:		boolean;
+		NuPa15		:		boolean;
+		NuPa16		:		boolean;
+		NuPa17		:		boolean;
+		NuPa18		:		boolean;
+		NuPa19		:		boolean;
+		NuPa20		:		boolean;
+		NuPa21		:		boolean;
+		NuPa22		:		boolean;
+		NuPachangeOwner_guard		:		boolean;
+		NuPa24		:		boolean;
+		NuPa25		:		boolean;
+		NuPa26		:		boolean;
+		NuPa27		:		boolean;
+		NuPa28		:		boolean;
+		NuPa29		:		boolean;
+		NuPa30		:		boolean;
+		NuPa31		:		boolean;
+		NuPa32		:		boolean;
+		NuPa33		:		boolean;
+		NuPa34		:		boolean;
+		NuPa35		:		boolean;
+		NuPakill_guard		:		boolean;
+		NuPa37		:		boolean;
+		NuPatoday_guard		:		boolean;
+		NuPa39		:		boolean;
+		NuPaclearPending_guard		:		boolean;
+		NuPa41		:		boolean;
+		NuPa42		:		boolean;
+		NuPa43		:		boolean;
+		NuPa44		:		boolean;
+		NuPa45		:		boolean;
+		NuPa46		:		boolean;
+		NuPa47		:		boolean;
+		NuPa48		:		boolean;
+		NuPa49		:		boolean;
+		NuPa50		:		boolean;
+		NuPaunderLimit_guard		:		boolean;
+		NuPa52		:		boolean;
+		NuPa53		:		boolean;
+		NuPa54		:		boolean;
+		NuPa55		:		boolean;
+		NuPa56		:		boolean;
+		NuPa57		:		boolean;
+		NuPa58		:		boolean;
+		NuPa59		:		boolean;
+		NuPa60		:		boolean;
+		NuPaaddOwner_guard		:		boolean;
+		NuPa62		:		boolean;
+		NuPa63		:		boolean;
+		NuPa64		:		boolean;
+		NuPa65		:		boolean;
+		NuPa66		:		boolean;
+		NuPa67		:		boolean;
+		NuPa68		:		boolean;
+		NuPa69		:		boolean;
+		NuPa70		:		boolean;
+		NuPa71		:		boolean;
+		NuPa72		:		boolean;
+		NuPa73		:		boolean;
+		NuPa74		:		boolean;
+		NuPa75		:		boolean;
+		NuParemoveOwner_guard		:		boolean;
+		NuPa77		:		boolean;
+		NuPa78		:		boolean;
+		NuPa79		:		boolean;
+		NuPa80		:		boolean;
+		NuPa81		:		boolean;
+		NuPa82		:		boolean;
+		NuPa83		:		boolean;
+		NuPa84		:		boolean;
+		NuPa85		:		boolean;
+		NuPa86		:		boolean;
+		NuPa87		:		boolean;
+		NuPa88		:		boolean;
+		NuPachangeRequirement_guard		:		boolean;
+		NuPa90		:		boolean;
+		NuPa91		:		boolean;
+		NuPa92		:		boolean;
+		NuPa93		:		boolean;
+		NuPa94		:		boolean;
+		NuPa95		:		boolean;
+		NuPagetOwner_guard		:		boolean;
+		NuPa97		:		boolean;
+		NuPaisOwner_guard		:		boolean;
+		NuPa99		:		boolean;
+		NuPahasConfirmed_guard		:		boolean;
+		NuPa101		:		boolean;
+		NuPa102		:		boolean;
+		NuPa103		:		boolean;
+		NuPa104		:		boolean;
+		NuPa105		:		boolean;
+		NuPa106		:		boolean;
+		NuPa107		:		boolean;
+		NuPainitDaylimit_guard		:		boolean;
+		NuPa109		:		boolean;
+		NuPa110		:		boolean;
+		NuPasetDailyLimit_guard		:		boolean;
+		NuPa112		:		boolean;
+		NuParesetSpentToday_guard		:		boolean;
+		NuPa114		:		boolean;
+		NuPainitWallet_guard		:		boolean;
+		NuPa116		:		boolean;
+		NuPa117		:		boolean;
+		Nuplace		:		{NuSInitialState, NuSinitMultiowned, NuSs2_1, NuSs2_2, NuSs2_3, NuSs2_4, NuSs6_I, NuSs6_C, NuSs6_B, NuSs9_1, NuSrevoke, NuSs11_1, NuSs11_2, NuSs11_3, NuSs11_4, NuSs15_T, NuSs16_T, NuSs17_1, NuSs17_2, NuSchangeOwner, NuSs20_1, NuSs20_2, NuSs20_3, NuSs20_4, NuSs20_5, NuSs20_6, NuSs20_7, NuSs27_T, NuSs28_T, NuSkill, NuStoday, NuSclearPending, NuSs32_1, NuSs32_2, NuSs34_I, NuSs34_C, NuSs34_B, NuSs37_1, NuSs38_T, NuSunderLimit, NuSs40_1, NuSs40_2, NuSs42_T, NuSs43_1, NuSs44_T, NuSs45_1, NuSaddOwner, NuSs47_1, NuSs47_2, NuSs47_3, NuSs47_4, NuSs47_5, NuSs47_6, NuSs47_7, NuSs54_T, NuSs55_T, NuSs56_T, NuSremoveOwner, NuSs58_1, NuSs58_2, NuSs58_3, NuSs58_4, NuSs58_5, NuSs58_6, NuSs58_7, NuSs65_T, NuSs66_T, NuSchangeRequirement, NuSs68_1, NuSs68_2, NuSs68_3, NuSs71_T, NuSgetOwner, NuSisOwner, NuShasConfirmed, NuSs75_1, NuSs75_2, NuSs75_3, NuSs75_4, NuSs79_T, NuSinitDaylimit, NuSs81_1, NuSsetDailyLimit, NuSresetSpentToday, NuSinitWallet, NuSs85_1};
+
+
+	INIT
+		( (Nuplace) = (NuSInitialState) );
+
+	INVAR
+		( (NuPa56) <-> (( (Nuplace) = (NuSs40_1) )) ) &
+		( (NuPa57) <-> (( (Nuplace) = (NuSs44_T) )) ) &
+		( (NuPa54) <-> (( (Nuplace) = (NuSs43_1) )) ) &
+		( (NuPa55) <-> (( (Nuplace) = (NuSunderLimit) )) ) &
+		( (NuPa58) <-> (( (Nuplace) = (NuSs45_1) )) ) &
+		( (NuPa59) <-> (( (Nuplace) = (NuSs40_1) )) ) &
+		( (NuPainitWallet_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa52) <-> (( (Nuplace) = (NuSunderLimit) )) ) &
+		( (NuPa53) <-> (( (Nuplace) = (NuSs42_T) )) ) &
+		( (NuPa9) <-> (( (Nuplace) = (NuSs6_B) )) ) &
+		( (NuPa50) <-> (( (Nuplace) = (NuSs32_2) )) ) &
+		( (NuPa7) <-> (( (Nuplace) = (NuSs6_C) )) ) &
+		( (NuPa8) <-> (( (Nuplace) = (NuSs9_1) )) ) &
+		( (NuPa5) <-> (( (Nuplace) = (NuSs6_I) )) ) &
+		( (NuPa6) <-> (( (Nuplace) = (NuSs6_I) )) ) &
+		( (NuPa3) <-> (( (Nuplace) = (NuSs2_2) )) ) &
+		( (NuPa4) <-> (( (Nuplace) = (NuSs2_3) )) ) &
+		( (NuPa1) <-> (( (Nuplace) = (NuSinitMultiowned) )) ) &
+		( (NuPa2) <-> (( (Nuplace) = (NuSs2_1) )) ) &
+		( (NuParesetSpentToday_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa67) <-> (( (Nuplace) = (NuSs55_T) )) ) &
+		( (NuPa68) <-> (( (Nuplace) = (NuSs47_2) )) ) &
+		( (NuPa65) <-> (( (Nuplace) = (NuSs47_1) )) ) &
+		( (NuPa66) <-> (( (Nuplace) = (NuSs47_2) )) ) &
+		( (NuPachangeRequirement_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa69) <-> (( (Nuplace) = (NuSs47_3) )) ) &
+		( (NuPa60) <-> (( (Nuplace) = (NuSs40_2) )) ) &
+		( (NuPa63) <-> (( (Nuplace) = (NuSs54_T) )) ) &
+		( (NuPa64) <-> (( (Nuplace) = (NuSaddOwner) )) ) &
+		( (NuPa62) <-> (( (Nuplace) = (NuSaddOwner) )) ) &
+		( (NuPa29) <-> (( (Nuplace) = (NuSs28_T) )) ) &
+		( (NuPa34) <-> (( (Nuplace) = (NuSs20_6) )) ) &
+		( (NuPaclearPending_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa35) <-> (( (Nuplace) = (NuSs20_7) )) ) &
+		( (NuPa32) <-> (( (Nuplace) = (NuSs20_4) )) ) &
+		( (NuPa33) <-> (( (Nuplace) = (NuSs20_5) )) ) &
+		( (NuPa39) <-> (( (Nuplace) = (NuStoday) )) ) &
+		( (NuPa37) <-> (( (Nuplace) = (NuSkill) )) ) &
+		( (NuPa107) <-> (( (Nuplace) = (NuSs75_4) )) ) &
+		( (NuPa106) <-> (( (Nuplace) = (NuSs75_3) )) ) &
+		( (NuPa105) <-> (( (Nuplace) = (NuSs75_2) )) ) &
+		( (NuPa104) <-> (( (Nuplace) = (NuSs79_T) )) ) &
+		( (NuPa30) <-> (( (Nuplace) = (NuSs20_2) )) ) &
+		( (NuPa103) <-> (( (Nuplace) = (NuSs75_2) )) ) &
+		( (NuPa31) <-> (( (Nuplace) = (NuSs20_3) )) ) &
+		( (NuPa102) <-> (( (Nuplace) = (NuSs75_1) )) ) &
+		( (NuPa101) <-> (( (Nuplace) = (NuShasConfirmed) )) ) &
+		( (NuPa109) <-> (( (Nuplace) = (NuSinitDaylimit) )) ) &
+		( (NuPa45) <-> (( (Nuplace) = (NuSs34_C) )) ) &
+		( (NuPa110) <-> (( (Nuplace) = (NuSs81_1) )) ) &
+		( (NuPa46) <-> (( (Nuplace) = (NuSs37_1) )) ) &
+		( (NuPa43) <-> (( (Nuplace) = (NuSs34_I) )) ) &
+		( (NuPa44) <-> (( (Nuplace) = (NuSs34_I) )) ) &
+		( (NuPa49) <-> (( (Nuplace) = (NuSs34_B) )) ) &
+		( (NuPa47) <-> (( (Nuplace) = (NuSs38_T) )) ) &
+		( (NuPa48) <-> (( (Nuplace) = (NuSs37_1) )) ) &
+		( (NuPa117) <-> (( (Nuplace) = (NuSs85_1) )) ) &
+		( (NuPa116) <-> (( (Nuplace) = (NuSinitWallet) )) ) &
+		( (NuPa41) <-> (( (Nuplace) = (NuSclearPending) )) ) &
+		( (NuPa114) <-> (( (Nuplace) = (NuSresetSpentToday) )) ) &
+		( (NuPa42) <-> (( (Nuplace) = (NuSs32_1) )) ) &
+		( (NuPa112) <-> (( (Nuplace) = (NuSsetDailyLimit) )) ) &
+		( (NuParevoke_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa12) <-> (( (Nuplace) = (NuSrevoke) )) ) &
+		( (NuPa13) <-> (( (Nuplace) = (NuSs11_1) )) ) &
+		( (NuPa10) <-> (( (Nuplace) = (NuSs2_4) )) ) &
+		( (NuPa99) <-> (( (Nuplace) = (NuSisOwner) )) ) &
+		( (NuPa16) <-> (( (Nuplace) = (NuSs11_2) )) ) &
+		( (NuPa17) <-> (( (Nuplace) = (NuSs11_3) )) ) &
+		( (NuPa14) <-> (( (Nuplace) = (NuSs15_T) )) ) &
+		( (NuPa15) <-> (( (Nuplace) = (NuSs11_1) )) ) &
+		( (NuPa92) <-> (( (Nuplace) = (NuSchangeRequirement) )) ) &
+		( (NuPa93) <-> (( (Nuplace) = (NuSs68_1) )) ) &
+		( (NuPa90) <-> (( (Nuplace) = (NuSchangeRequirement) )) ) &
+		( (NuPa91) <-> (( (Nuplace) = (NuSs71_T) )) ) &
+		( (NuPa97) <-> (( (Nuplace) = (NuSgetOwner) )) ) &
+		( (NuPainitMultiowned_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa94) <-> (( (Nuplace) = (NuSs68_2) )) ) &
+		( (NuPa95) <-> (( (Nuplace) = (NuSs68_3) )) ) &
+		( (NuParemoveOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa18) <-> (( (Nuplace) = (NuSs11_4) )) ) &
+		( (NuPa19) <-> (( (Nuplace) = (NuSs16_T) )) ) &
+		( (NuPainitDaylimit_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa24) <-> (( (Nuplace) = (NuSchangeOwner) )) ) &
+		( (NuPa21) <-> (( (Nuplace) = (NuSs17_2) )) ) &
+		( (NuPa22) <-> (( (Nuplace) = (NuSs11_4) )) ) &
+		( (NuPa27) <-> (( (Nuplace) = (NuSs20_1) )) ) &
+		( (NuPa28) <-> (( (Nuplace) = (NuSs20_2) )) ) &
+		( (NuPa25) <-> (( (Nuplace) = (NuSs27_T) )) ) &
+		( (NuPa26) <-> (( (Nuplace) = (NuSchangeOwner) )) ) &
+		( (NuPa20) <-> (( (Nuplace) = (NuSs17_1) )) ) &
+		( (NuPakill_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa78) <-> (( (Nuplace) = (NuSs58_1) )) ) &
+		( (NuPa79) <-> (( (Nuplace) = (NuSs65_T) )) ) &
+		( (NuPa77) <-> (( (Nuplace) = (NuSremoveOwner) )) ) &
+		( (NuPa70) <-> (( (Nuplace) = (NuSs56_T) )) ) &
+		( (NuPaaddOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa71) <-> (( (Nuplace) = (NuSs47_3) )) ) &
+		( (NuPachangeOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa74) <-> (( (Nuplace) = (NuSs47_6) )) ) &
+		( (NuPa75) <-> (( (Nuplace) = (NuSs47_7) )) ) &
+		( (NuPa72) <-> (( (Nuplace) = (NuSs47_4) )) ) &
+		( (NuPa73) <-> (( (Nuplace) = (NuSs47_5) )) ) &
+		( (NuPagetOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPatoday_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPaunderLimit_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPasetDailyLimit_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa87) <-> (( (Nuplace) = (NuSs58_6) )) ) &
+		( (NuPa88) <-> (( (Nuplace) = (NuSs58_7) )) ) &
+		( (NuPaisOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa81) <-> (( (Nuplace) = (NuSs58_2) )) ) &
+		( (NuPa82) <-> (( (Nuplace) = (NuSs66_T) )) ) &
+		( (NuPahasConfirmed_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa80) <-> (( (Nuplace) = (NuSs58_1) )) ) &
+		( (NuPa85) <-> (( (Nuplace) = (NuSs58_4) )) ) &
+		( (NuPa86) <-> (( (Nuplace) = (NuSs58_5) )) ) &
+		( (NuPa83) <-> (( (Nuplace) = (NuSs58_2) )) ) &
+		( (NuPa84) <-> (( (Nuplace) = (NuSs58_3) )) );
+
+	TRANS
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSinitMultiowned) )) )) & (( (active_interaction) = (NuI1) )) ) |
+		( (( (( (Nuplace) = (NuSinitMultiowned) )) & (( (next(Nuplace)) = (NuSs2_1) )) )) & (( (active_interaction) = (NuI2) )) ) |
+		( (( (( (Nuplace) = (NuSs2_1) )) & (( (next(Nuplace)) = (NuSs2_2) )) )) & (( (active_interaction) = (NuI3) )) ) |
+		( (( (( (Nuplace) = (NuSs2_2) )) & (( (next(Nuplace)) = (NuSs2_3) )) )) & (( (active_interaction) = (NuI4) )) ) |
+		( (( (( (Nuplace) = (NuSs2_3) )) & (( (next(Nuplace)) = (NuSs6_I) )) )) & (( (active_interaction) = (NuI5) )) ) |
+		( (( (( (Nuplace) = (NuSs6_I) )) & (( (next(Nuplace)) = (NuSs2_4) )) )) & (( (active_interaction) = (NuI6) )) ) |
+		( (( (( (Nuplace) = (NuSs6_I) )) & (( (next(Nuplace)) = (NuSs6_C) )) )) & (( (active_interaction) = (NuI7) )) ) |
+		( (( (( (Nuplace) = (NuSs6_C) )) & (( (next(Nuplace)) = (NuSs9_1) )) )) & (( (active_interaction) = (NuI8) )) ) |
+		( (( (( (Nuplace) = (NuSs9_1) )) & (( (next(Nuplace)) = (NuSs6_B) )) )) & (( (active_interaction) = (NuI9) )) ) |
+		( (( (( (Nuplace) = (NuSs6_B) )) & (( (next(Nuplace)) = (NuSs6_I) )) )) & (( (active_interaction) = (NuI10) )) ) |
+		( (( (( (Nuplace) = (NuSs2_4) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI11) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSrevoke) )) )) & (( (active_interaction) = (NuI12) )) ) |
+		( (( (( (Nuplace) = (NuSrevoke) )) & (( (next(Nuplace)) = (NuSs11_1) )) )) & (( (active_interaction) = (NuI13) )) ) |
+		( (( (( (Nuplace) = (NuSs11_1) )) & (( (next(Nuplace)) = (NuSs15_T) )) )) & (( (active_interaction) = (NuI14) )) ) |
+		( (( (( (Nuplace) = (NuSs15_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI15) )) ) |
+		( (( (( (Nuplace) = (NuSs11_1) )) & (( (next(Nuplace)) = (NuSs11_2) )) )) & (( (active_interaction) = (NuI16) )) ) |
+		( (( (( (Nuplace) = (NuSs11_2) )) & (( (next(Nuplace)) = (NuSs11_3) )) )) & (( (active_interaction) = (NuI17) )) ) |
+		( (( (( (Nuplace) = (NuSs11_3) )) & (( (next(Nuplace)) = (NuSs11_4) )) )) & (( (active_interaction) = (NuI18) )) ) |
+		( (( (( (Nuplace) = (NuSs11_4) )) & (( (next(Nuplace)) = (NuSs16_T) )) )) & (( (active_interaction) = (NuI19) )) ) |
+		( (( (( (Nuplace) = (NuSs16_T) )) & (( (next(Nuplace)) = (NuSs17_1) )) )) & (( (active_interaction) = (NuI20) )) ) |
+		( (( (( (Nuplace) = (NuSs17_1) )) & (( (next(Nuplace)) = (NuSs17_2) )) )) & (( (active_interaction) = (NuI21) )) ) |
+		( (( (( (Nuplace) = (NuSs17_2) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI22) )) ) |
+		( (( (( (Nuplace) = (NuSs11_4) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI23) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSchangeOwner) )) )) & (( (active_interaction) = (NuI24) )) ) |
+		( (( (( (Nuplace) = (NuSchangeOwner) )) & (( (next(Nuplace)) = (NuSs27_T) )) )) & (( (active_interaction) = (NuI25) )) ) |
+		( (( (( (Nuplace) = (NuSs27_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI26) )) ) |
+		( (( (( (Nuplace) = (NuSchangeOwner) )) & (( (next(Nuplace)) = (NuSs20_1) )) )) & (( (active_interaction) = (NuI27) )) ) |
+		( (( (( (Nuplace) = (NuSs20_1) )) & (( (next(Nuplace)) = (NuSs20_2) )) )) & (( (active_interaction) = (NuI28) )) ) |
+		( (( (( (Nuplace) = (NuSs20_2) )) & (( (next(Nuplace)) = (NuSs28_T) )) )) & (( (active_interaction) = (NuI29) )) ) |
+		( (( (( (Nuplace) = (NuSs28_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI30) )) ) |
+		( (( (( (Nuplace) = (NuSs20_2) )) & (( (next(Nuplace)) = (NuSs20_3) )) )) & (( (active_interaction) = (NuI31) )) ) |
+		( (( (( (Nuplace) = (NuSs20_3) )) & (( (next(Nuplace)) = (NuSs20_4) )) )) & (( (active_interaction) = (NuI32) )) ) |
+		( (( (( (Nuplace) = (NuSs20_4) )) & (( (next(Nuplace)) = (NuSs20_5) )) )) & (( (active_interaction) = (NuI33) )) ) |
+		( (( (( (Nuplace) = (NuSs20_5) )) & (( (next(Nuplace)) = (NuSs20_6) )) )) & (( (active_interaction) = (NuI34) )) ) |
+		( (( (( (Nuplace) = (NuSs20_6) )) & (( (next(Nuplace)) = (NuSs20_7) )) )) & (( (active_interaction) = (NuI35) )) ) |
+		( (( (( (Nuplace) = (NuSs20_7) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI36) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSkill) )) )) & (( (active_interaction) = (NuI37) )) ) |
+		( (( (( (Nuplace) = (NuSkill) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI38) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuStoday) )) )) & (( (active_interaction) = (NuI39) )) ) |
+		( (( (( (Nuplace) = (NuStoday) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI40) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSclearPending) )) )) & (( (active_interaction) = (NuI41) )) ) |
+		( (( (( (Nuplace) = (NuSclearPending) )) & (( (next(Nuplace)) = (NuSs32_1) )) )) & (( (active_interaction) = (NuI42) )) ) |
+		( (( (( (Nuplace) = (NuSs32_1) )) & (( (next(Nuplace)) = (NuSs34_I) )) )) & (( (active_interaction) = (NuI43) )) ) |
+		( (( (( (Nuplace) = (NuSs34_I) )) & (( (next(Nuplace)) = (NuSs32_2) )) )) & (( (active_interaction) = (NuI44) )) ) |
+		( (( (( (Nuplace) = (NuSs34_I) )) & (( (next(Nuplace)) = (NuSs34_C) )) )) & (( (active_interaction) = (NuI45) )) ) |
+		( (( (( (Nuplace) = (NuSs34_C) )) & (( (next(Nuplace)) = (NuSs37_1) )) )) & (( (active_interaction) = (NuI46) )) ) |
+		( (( (( (Nuplace) = (NuSs37_1) )) & (( (next(Nuplace)) = (NuSs38_T) )) )) & (( (active_interaction) = (NuI47) )) ) |
+		( (( (( (Nuplace) = (NuSs38_T) )) & (( (next(Nuplace)) = (NuSs34_B) )) )) & (( (active_interaction) = (NuI48) )) ) |
+		( (( (( (Nuplace) = (NuSs37_1) )) & (( (next(Nuplace)) = (NuSs34_B) )) )) & (( (active_interaction) = (NuI49) )) ) |
+		( (( (( (Nuplace) = (NuSs34_B) )) & (( (next(Nuplace)) = (NuSs34_I) )) )) & (( (active_interaction) = (NuI50) )) ) |
+		( (( (( (Nuplace) = (NuSs32_2) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI51) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSunderLimit) )) )) & (( (active_interaction) = (NuI52) )) ) |
+		( (( (( (Nuplace) = (NuSunderLimit) )) & (( (next(Nuplace)) = (NuSs42_T) )) )) & (( (active_interaction) = (NuI53) )) ) |
+		( (( (( (Nuplace) = (NuSs42_T) )) & (( (next(Nuplace)) = (NuSs43_1) )) )) & (( (active_interaction) = (NuI54) )) ) |
+		( (( (( (Nuplace) = (NuSs43_1) )) & (( (next(Nuplace)) = (NuSs40_1) )) )) & (( (active_interaction) = (NuI55) )) ) |
+		( (( (( (Nuplace) = (NuSunderLimit) )) & (( (next(Nuplace)) = (NuSs40_1) )) )) & (( (active_interaction) = (NuI56) )) ) |
+		( (( (( (Nuplace) = (NuSs40_1) )) & (( (next(Nuplace)) = (NuSs44_T) )) )) & (( (active_interaction) = (NuI57) )) ) |
+		( (( (( (Nuplace) = (NuSs44_T) )) & (( (next(Nuplace)) = (NuSs45_1) )) )) & (( (active_interaction) = (NuI58) )) ) |
+		( (( (( (Nuplace) = (NuSs45_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI59) )) ) |
+		( (( (( (Nuplace) = (NuSs40_1) )) & (( (next(Nuplace)) = (NuSs40_2) )) )) & (( (active_interaction) = (NuI60) )) ) |
+		( (( (( (Nuplace) = (NuSs40_2) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI61) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSaddOwner) )) )) & (( (active_interaction) = (NuI62) )) ) |
+		( (( (( (Nuplace) = (NuSaddOwner) )) & (( (next(Nuplace)) = (NuSs54_T) )) )) & (( (active_interaction) = (NuI63) )) ) |
+		( (( (( (Nuplace) = (NuSs54_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI64) )) ) |
+		( (( (( (Nuplace) = (NuSaddOwner) )) & (( (next(Nuplace)) = (NuSs47_1) )) )) & (( (active_interaction) = (NuI65) )) ) |
+		( (( (( (Nuplace) = (NuSs47_1) )) & (( (next(Nuplace)) = (NuSs47_2) )) )) & (( (active_interaction) = (NuI66) )) ) |
+		( (( (( (Nuplace) = (NuSs47_2) )) & (( (next(Nuplace)) = (NuSs55_T) )) )) & (( (active_interaction) = (NuI67) )) ) |
+		( (( (( (Nuplace) = (NuSs55_T) )) & (( (next(Nuplace)) = (NuSs47_3) )) )) & (( (active_interaction) = (NuI68) )) ) |
+		( (( (( (Nuplace) = (NuSs47_2) )) & (( (next(Nuplace)) = (NuSs47_3) )) )) & (( (active_interaction) = (NuI69) )) ) |
+		( (( (( (Nuplace) = (NuSs47_3) )) & (( (next(Nuplace)) = (NuSs56_T) )) )) & (( (active_interaction) = (NuI70) )) ) |
+		( (( (( (Nuplace) = (NuSs56_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI71) )) ) |
+		( (( (( (Nuplace) = (NuSs47_3) )) & (( (next(Nuplace)) = (NuSs47_4) )) )) & (( (active_interaction) = (NuI72) )) ) |
+		( (( (( (Nuplace) = (NuSs47_4) )) & (( (next(Nuplace)) = (NuSs47_5) )) )) & (( (active_interaction) = (NuI73) )) ) |
+		( (( (( (Nuplace) = (NuSs47_5) )) & (( (next(Nuplace)) = (NuSs47_6) )) )) & (( (active_interaction) = (NuI74) )) ) |
+		( (( (( (Nuplace) = (NuSs47_6) )) & (( (next(Nuplace)) = (NuSs47_7) )) )) & (( (active_interaction) = (NuI75) )) ) |
+		( (( (( (Nuplace) = (NuSs47_7) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI76) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSremoveOwner) )) )) & (( (active_interaction) = (NuI77) )) ) |
+		( (( (( (Nuplace) = (NuSremoveOwner) )) & (( (next(Nuplace)) = (NuSs58_1) )) )) & (( (active_interaction) = (NuI78) )) ) |
+		( (( (( (Nuplace) = (NuSs58_1) )) & (( (next(Nuplace)) = (NuSs65_T) )) )) & (( (active_interaction) = (NuI79) )) ) |
+		( (( (( (Nuplace) = (NuSs65_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI80) )) ) |
+		( (( (( (Nuplace) = (NuSs58_1) )) & (( (next(Nuplace)) = (NuSs58_2) )) )) & (( (active_interaction) = (NuI81) )) ) |
+		( (( (( (Nuplace) = (NuSs58_2) )) & (( (next(Nuplace)) = (NuSs66_T) )) )) & (( (active_interaction) = (NuI82) )) ) |
+		( (( (( (Nuplace) = (NuSs66_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI83) )) ) |
+		( (( (( (Nuplace) = (NuSs58_2) )) & (( (next(Nuplace)) = (NuSs58_3) )) )) & (( (active_interaction) = (NuI84) )) ) |
+		( (( (( (Nuplace) = (NuSs58_3) )) & (( (next(Nuplace)) = (NuSs58_4) )) )) & (( (active_interaction) = (NuI85) )) ) |
+		( (( (( (Nuplace) = (NuSs58_4) )) & (( (next(Nuplace)) = (NuSs58_5) )) )) & (( (active_interaction) = (NuI86) )) ) |
+		( (( (( (Nuplace) = (NuSs58_5) )) & (( (next(Nuplace)) = (NuSs58_6) )) )) & (( (active_interaction) = (NuI87) )) ) |
+		( (( (( (Nuplace) = (NuSs58_6) )) & (( (next(Nuplace)) = (NuSs58_7) )) )) & (( (active_interaction) = (NuI88) )) ) |
+		( (( (( (Nuplace) = (NuSs58_7) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI89) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSchangeRequirement) )) )) & (( (active_interaction) = (NuI90) )) ) |
+		( (( (( (Nuplace) = (NuSchangeRequirement) )) & (( (next(Nuplace)) = (NuSs71_T) )) )) & (( (active_interaction) = (NuI91) )) ) |
+		( (( (( (Nuplace) = (NuSs71_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI92) )) ) |
+		( (( (( (Nuplace) = (NuSchangeRequirement) )) & (( (next(Nuplace)) = (NuSs68_1) )) )) & (( (active_interaction) = (NuI93) )) ) |
+		( (( (( (Nuplace) = (NuSs68_1) )) & (( (next(Nuplace)) = (NuSs68_2) )) )) & (( (active_interaction) = (NuI94) )) ) |
+		( (( (( (Nuplace) = (NuSs68_2) )) & (( (next(Nuplace)) = (NuSs68_3) )) )) & (( (active_interaction) = (NuI95) )) ) |
+		( (( (( (Nuplace) = (NuSs68_3) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI96) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetOwner) )) )) & (( (active_interaction) = (NuI97) )) ) |
+		( (( (( (Nuplace) = (NuSgetOwner) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI98) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSisOwner) )) )) & (( (active_interaction) = (NuI99) )) ) |
+		( (( (( (Nuplace) = (NuSisOwner) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI100) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuShasConfirmed) )) )) & (( (active_interaction) = (NuI101) )) ) |
+		( (( (( (Nuplace) = (NuShasConfirmed) )) & (( (next(Nuplace)) = (NuSs75_1) )) )) & (( (active_interaction) = (NuI102) )) ) |
+		( (( (( (Nuplace) = (NuSs75_1) )) & (( (next(Nuplace)) = (NuSs75_2) )) )) & (( (active_interaction) = (NuI103) )) ) |
+		( (( (( (Nuplace) = (NuSs75_2) )) & (( (next(Nuplace)) = (NuSs79_T) )) )) & (( (active_interaction) = (NuI104) )) ) |
+		( (( (( (Nuplace) = (NuSs79_T) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI105) )) ) |
+		( (( (( (Nuplace) = (NuSs75_2) )) & (( (next(Nuplace)) = (NuSs75_3) )) )) & (( (active_interaction) = (NuI106) )) ) |
+		( (( (( (Nuplace) = (NuSs75_3) )) & (( (next(Nuplace)) = (NuSs75_4) )) )) & (( (active_interaction) = (NuI107) )) ) |
+		( (( (( (Nuplace) = (NuSs75_4) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI108) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSinitDaylimit) )) )) & (( (active_interaction) = (NuI109) )) ) |
+		( (( (( (Nuplace) = (NuSinitDaylimit) )) & (( (next(Nuplace)) = (NuSs81_1) )) )) & (( (active_interaction) = (NuI110) )) ) |
+		( (( (( (Nuplace) = (NuSs81_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI111) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSsetDailyLimit) )) )) & (( (active_interaction) = (NuI112) )) ) |
+		( (( (( (Nuplace) = (NuSsetDailyLimit) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI113) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSresetSpentToday) )) )) & (( (active_interaction) = (NuI114) )) ) |
+		( (( (( (Nuplace) = (NuSresetSpentToday) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI115) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSinitWallet) )) )) & (( (active_interaction) = (NuI116) )) ) |
+		( (( (( (Nuplace) = (NuSinitWallet) )) & (( (next(Nuplace)) = (NuSs85_1) )) )) & (( (active_interaction) = (NuI117) )) ) |
+		( (( (( (Nuplace) = (NuSs85_1) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI118) )) ) |
+		( (( (active_interaction) != (NuI118) )) & (( (( (active_interaction) != (NuI117) )) & (( (( (active_interaction) != (NuI116) )) & (( (( (active_interaction) != (NuI115) )) & (( (( (active_interaction) != (NuI114) )) & (( (( (active_interaction) != (NuI113) )) & (( (( (active_interaction) != (NuI112) )) & (( (( (active_interaction) != (NuI111) )) & (( (( (active_interaction) != (NuI110) )) & (( (( (active_interaction) != (NuI109) )) & (( (( (active_interaction) != (NuI108) )) & (( (( (active_interaction) != (NuI107) )) & (( (( (active_interaction) != (NuI106) )) & (( (( (active_interaction) != (NuI105) )) & (( (( (active_interaction) != (NuI104) )) & (( (( (active_interaction) != (NuI103) )) & (( (( (active_interaction) != (NuI102) )) & (( (( (active_interaction) != (NuI101) )) & (( (( (active_interaction) != (NuI100) )) & (( (( (active_interaction) != (NuI99) )) & (( (( (active_interaction) != (NuI98) )) & (( (( (active_interaction) != (NuI97) )) & (( (( (active_interaction) != (NuI96) )) & (( (( (active_interaction) != (NuI95) )) & (( (( (active_interaction) != (NuI94) )) & (( (( (active_interaction) != (NuI93) )) & (( (( (active_interaction) != (NuI92) )) & (( (( (active_interaction) != (NuI91) )) & (( (( (active_interaction) != (NuI90) )) & (( (( (active_interaction) != (NuI89) )) & (( (( (active_interaction) != (NuI88) )) & (( (( (active_interaction) != (NuI87) )) & (( (( (active_interaction) != (NuI86) )) & (( (( (active_interaction) != (NuI85) )) & (( (( (active_interaction) != (NuI84) )) & (( (( (active_interaction) != (NuI83) )) & (( (( (active_interaction) != (NuI82) )) & (( (( (active_interaction) != (NuI81) )) & (( (( (active_interaction) != (NuI80) )) & (( (( (active_interaction) != (NuI79) )) & (( (( (active_interaction) != (NuI78) )) & (( (( (active_interaction) != (NuI77) )) & (( (( (active_interaction) != (NuI76) )) & (( (( (active_interaction) != (NuI75) )) & (( (( (active_interaction) != (NuI74) )) & (( (( (active_interaction) != (NuI73) )) & (( (( (active_interaction) != (NuI72) )) & (( (( (active_interaction) != (NuI71) )) & (( (( (active_interaction) != (NuI70) )) & (( (( (active_interaction) != (NuI69) )) & (( (( (active_interaction) != (NuI68) )) & (( (( (active_interaction) != (NuI67) )) & (( (( (active_interaction) != (NuI66) )) & (( (( (active_interaction) != (NuI65) )) & (( (( (active_interaction) != (NuI64) )) & (( (( (active_interaction) != (NuI63) )) & (( (( (active_interaction) != (NuI62) )) & (( (( (active_interaction) != (NuI61) )) & (( (( (active_interaction) != (NuI60) )) & (( (( (active_interaction) != (NuI59) )) & (( (( (active_interaction) != (NuI58) )) & (( (( (active_interaction) != (NuI57) )) & (( (( (active_interaction) != (NuI56) )) & (( (( (active_interaction) != (NuI55) )) & (( (( (active_interaction) != (NuI54) )) & (( (( (active_interaction) != (NuI53) )) & (( (( (active_interaction) != (NuI52) )) & (( (( (active_interaction) != (NuI51) )) & (( (( (active_interaction) != (NuI50) )) & (( (( (active_interaction) != (NuI49) )) & (( (( (active_interaction) != (NuI48) )) & (( (( (active_interaction) != (NuI47) )) & (( (( (active_interaction) != (NuI46) )) & (( (( (active_interaction) != (NuI45) )) & (( (( (active_interaction) != (NuI44) )) & (( (( (active_interaction) != (NuI43) )) & (( (( (active_interaction) != (NuI42) )) & (( (( (active_interaction) != (NuI41) )) & (( (( (active_interaction) != (NuI40) )) & (( (( (active_interaction) != (NuI39) )) & (( (( (active_interaction) != (NuI38) )) & (( (( (active_interaction) != (NuI37) )) & (( (( (active_interaction) != (NuI36) )) & (( (( (active_interaction) != (NuI35) )) & (( (( (active_interaction) != (NuI34) )) & (( (( (active_interaction) != (NuI33) )) & (( (( (active_interaction) != (NuI32) )) & (( (( (active_interaction) != (NuI31) )) & (( (( (active_interaction) != (NuI30) )) & (( (( (active_interaction) != (NuI29) )) & (( (( (active_interaction) != (NuI28) )) & (( (( (active_interaction) != (NuI27) )) & (( (( (active_interaction) != (NuI26) )) & (( (( (active_interaction) != (NuI25) )) & (( (( (active_interaction) != (NuI24) )) & (( (( (active_interaction) != (NuI23) )) & (( (( (active_interaction) != (NuI22) )) & (( (( (active_interaction) != (NuI21) )) & (( (( (active_interaction) != (NuI20) )) & (( (( (active_interaction) != (NuI19) )) & (( (( (active_interaction) != (NuI18) )) & (( (( (active_interaction) != (NuI17) )) & (( (( (active_interaction) != (NuI16) )) & (( (( (active_interaction) != (NuI15) )) & (( (( (active_interaction) != (NuI14) )) & (( (( (active_interaction) != (NuI13) )) & (( (( (active_interaction) != (NuI12) )) & (( (( (active_interaction) != (NuI11) )) & (( (( (active_interaction) != (NuI10) )) & (( (( (active_interaction) != (NuI9) )) & (( (( (active_interaction) != (NuI8) )) & (( (( (active_interaction) != (NuI7) )) & (( (( (active_interaction) != (NuI6) )) & (( (( (active_interaction) != (NuI5) )) & (( (( (active_interaction) != (NuI4) )) & (( (( (active_interaction) != (NuI3) )) & (( (( (active_interaction) != (NuI2) )) & (( (( (active_interaction) != (NuI1) )) & (( (next(Nuplace)) = (Nuplace) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) )) );
+
+
+MODULE main
+
+	VAR
+		NuInteraction		:		{NuI1, NuI2, NuI3, NuI4, NuI5, NuI6, NuI7, NuI8, NuI9, NuI10, NuI11, NuI12, NuI13, NuI14, NuI15, NuI16, NuI17, NuI18, NuI19, NuI20, NuI21, NuI22, NuI23, NuI24, NuI25, NuI26, NuI27, NuI28, NuI29, NuI30, NuI31, NuI32, NuI33, NuI34, NuI35, NuI36, NuI37, NuI38, NuI39, NuI40, NuI41, NuI42, NuI43, NuI44, NuI45, NuI46, NuI47, NuI48, NuI49, NuI50, NuI51, NuI52, NuI53, NuI54, NuI55, NuI56, NuI57, NuI58, NuI59, NuI60, NuI61, NuI62, NuI63, NuI64, NuI65, NuI66, NuI67, NuI68, NuI69, NuI70, NuI71, NuI72, NuI73, NuI74, NuI75, NuI76, NuI77, NuI78, NuI79, NuI80, NuI81, NuI82, NuI83, NuI84, NuI85, NuI86, NuI87, NuI88, NuI89, NuI90, NuI91, NuI92, NuI93, NuI94, NuI95, NuI96, NuI97, NuI98, NuI99, NuI100, NuI101, NuI102, NuI103, NuI104, NuI105, NuI106, NuI107, NuI108, NuI109, NuI110, NuI111, NuI112, NuI113, NuI114, NuI115, NuI116, NuI117, NuI118};
+		bauc	:	BAUC(NuInteraction);
+
+	DEFINE
+		BAUC_a21		:=		bauc.NuPa21;
+		BAUC_aremoveOwner_guard		:=		bauc.NuParemoveOwner_guard;
+		BAUC_a117		:=		bauc.NuPa117;
+		BAUC_a37		:=		bauc.NuPa37;
+		BAUC_a30		:=		bauc.NuPa30;
+		BAUC_a86		:=		bauc.NuPa86;
+		BAUC_a13		:=		bauc.NuPa13;
+		BAUC_a6		:=		bauc.NuPa6;
+		BAUC_a85		:=		bauc.NuPa85;
+		BAUC_a70		:=		bauc.NuPa70;
+		BAUC_a102		:=		bauc.NuPa102;
+		BAUC_a83		:=		bauc.NuPa83;
+		BAUC_a8		:=		bauc.NuPa8;
+		BAUC_a42		:=		bauc.NuPa42;
+		BAUC_a116		:=		bauc.NuPa116;
+		BAUC_a69		:=		bauc.NuPa69;
+		BAUC_ahasConfirmed_guard		:=		bauc.NuPahasConfirmed_guard;
+		BAUC_a68		:=		bauc.NuPa68;
+		BAUC_a35		:=		bauc.NuPa35;
+		BAUC_a43		:=		bauc.NuPa43;
+		BAUC_a67		:=		bauc.NuPa67;
+		BAUC_a66		:=		bauc.NuPa66;
+		BAUC_a82		:=		bauc.NuPa82;
+		BAUC_a114		:=		bauc.NuPa114;
+		BAUC_a56		:=		bauc.NuPa56;
+		BAUC_a55		:=		bauc.NuPa55;
+		BAUC_a74		:=		bauc.NuPa74;
+		BAUC_a24		:=		bauc.NuPa24;
+		BAUC_a46		:=		bauc.NuPa46;
+		BAUC_a64		:=		bauc.NuPa64;
+		BAUC_a39		:=		bauc.NuPa39;
+		BAUC_agetOwner_guard		:=		bauc.NuPagetOwner_guard;
+		BAUC_a107		:=		bauc.NuPa107;
+		BAUC_a22		:=		bauc.NuPa22;
+		BAUC_a53		:=		bauc.NuPa53;
+		BAUC_a52		:=		bauc.NuPa52;
+		BAUC_asetDailyLimit_guard		:=		bauc.NuPasetDailyLimit_guard;
+		BAUC_a104		:=		bauc.NuPa104;
+		BAUC_a87		:=		bauc.NuPa87;
+		BAUC_a27		:=		bauc.NuPa27;
+		BAUC_atoday_guard		:=		bauc.NuPatoday_guard;
+		BAUC_a88		:=		bauc.NuPa88;
+		BAUC_achangeOwner_guard		:=		bauc.NuPachangeOwner_guard;
+		BAUC_a26		:=		bauc.NuPa26;
+		BAUC_a112		:=		bauc.NuPa112;
+		BAUC_aaddOwner_guard		:=		bauc.NuPaaddOwner_guard;
+		BAUC_a28		:=		bauc.NuPa28;
+		BAUC_a72		:=		bauc.NuPa72;
+		BAUC_a93		:=		bauc.NuPa93;
+		BAUC_ainitMultiowned_guard		:=		bauc.NuPainitMultiowned_guard;
+		BAUC_a1		:=		bauc.NuPa1;
+		BAUC_a95		:=		bauc.NuPa95;
+		BAUC_a32		:=		bauc.NuPa32;
+		BAUC_a49		:=		bauc.NuPa49;
+		BAUC_a73		:=		bauc.NuPa73;
+		BAUC_a90		:=		bauc.NuPa90;
+		BAUC_ainitDaylimit_guard		:=		bauc.NuPainitDaylimit_guard;
+		BAUC_a45		:=		bauc.NuPa45;
+		BAUC_a60		:=		bauc.NuPa60;
+		BAUC_a10		:=		bauc.NuPa10;
+		BAUC_a5		:=		bauc.NuPa5;
+		BAUC_akill_guard		:=		bauc.NuPakill_guard;
+		BAUC_a65		:=		bauc.NuPa65;
+		BAUC_aresetSpentToday_guard		:=		bauc.NuParesetSpentToday_guard;
+		BAUC_a25		:=		bauc.NuPa25;
+		BAUC_a101		:=		bauc.NuPa101;
+		BAUC_a4		:=		bauc.NuPa4;
+		BAUC_a47		:=		bauc.NuPa47;
+		BAUC_aclearPending_guard		:=		bauc.NuPaclearPending_guard;
+		BAUC_arevoke_guard		:=		bauc.NuParevoke_guard;
+		BAUC_a75		:=		bauc.NuPa75;
+		BAUC_a12		:=		bauc.NuPa12;
+		BAUC_a31		:=		bauc.NuPa31;
+		BAUC_a92		:=		bauc.NuPa92;
+		BAUC_achangeRequirement_guard		:=		bauc.NuPachangeRequirement_guard;
+		BAUC_ainitWallet_guard		:=		bauc.NuPainitWallet_guard;
+		BAUC_a84		:=		bauc.NuPa84;
+		BAUC_a33		:=		bauc.NuPa33;
+		BAUC_a48		:=		bauc.NuPa48;
+		BAUC_a14		:=		bauc.NuPa14;
+		BAUC_a19		:=		bauc.NuPa19;
+		BAUC_a97		:=		bauc.NuPa97;
+		BAUC_a103		:=		bauc.NuPa103;
+		BAUC_a2		:=		bauc.NuPa2;
+		BAUC_a29		:=		bauc.NuPa29;
+		BAUC_a81		:=		bauc.NuPa81;
+		BAUC_a44		:=		bauc.NuPa44;
+		BAUC_a59		:=		bauc.NuPa59;
+		BAUC_a78		:=		bauc.NuPa78;
+		BAUC_a106		:=		bauc.NuPa106;
+		BAUC_aunderLimit_guard		:=		bauc.NuPaunderLimit_guard;
+		BAUC_a94		:=		bauc.NuPa94;
+		BAUC_a79		:=		bauc.NuPa79;
+		BAUC_a105		:=		bauc.NuPa105;
+		BAUC_a18		:=		bauc.NuPa18;
+		BAUC_a17		:=		bauc.NuPa17;
+		BAUC_a50		:=		bauc.NuPa50;
+		BAUC_a3		:=		bauc.NuPa3;
+		BAUC_a110		:=		bauc.NuPa110;
+		BAUC_a20		:=		bauc.NuPa20;
+		BAUC_aisOwner_guard		:=		bauc.NuPaisOwner_guard;
+		BAUC_a41		:=		bauc.NuPa41;
+		BAUC_a77		:=		bauc.NuPa77;
+		BAUC_a62		:=		bauc.NuPa62;
+		BAUC_a16		:=		bauc.NuPa16;
+		BAUC_a80		:=		bauc.NuPa80;
+		BAUC_a15		:=		bauc.NuPa15;
+		BAUC_a71		:=		bauc.NuPa71;
+		BAUC_a9		:=		bauc.NuPa9;
+		BAUC_a91		:=		bauc.NuPa91;
+		BAUC_a109		:=		bauc.NuPa109;
+		BAUC_a58		:=		bauc.NuPa58;
+		BAUC_a57		:=		bauc.NuPa57;
+		BAUC_a63		:=		bauc.NuPa63;
+		BAUC_a99		:=		bauc.NuPa99;
+		BAUC_a34		:=		bauc.NuPa34;
+		BAUC_a54		:=		bauc.NuPa54;
+		BAUC_a7		:=		bauc.NuPa7;
+
+
+	INVAR
+		( (( (NuInteraction) = (NuI22) )) -> (BAUC_a21) ) &
+		( (( (NuInteraction) = (NuI77) )) -> (BAUC_aremoveOwner_guard) ) &
+		( (( (NuInteraction) = (NuI118) )) -> (BAUC_a117) ) &
+		( (( (NuInteraction) = (NuI38) )) -> (BAUC_a37) ) &
+		( (( (NuInteraction) = (NuI31) )) -> (BAUC_a30) ) &
+		( (( (NuInteraction) = (NuI87) )) -> (BAUC_a86) ) &
+		( (( (NuInteraction) = (NuI14) )) -> (BAUC_a13) ) &
+		( (( (NuInteraction) = (NuI7) )) -> (BAUC_a6) ) &
+		( (( (NuInteraction) = (NuI86) )) -> (BAUC_a85) ) &
+		( (( (NuInteraction) = (NuI71) )) -> (BAUC_a70) ) &
+		( (( (NuInteraction) = (NuI103) )) -> (BAUC_a102) ) &
+		( (( (NuInteraction) = (NuI84) )) -> (BAUC_a83) ) &
+		( (( (NuInteraction) = (NuI9) )) -> (BAUC_a8) ) &
+		( (( (NuInteraction) = (NuI43) )) -> (BAUC_a42) ) &
+		( (( (NuInteraction) = (NuI117) )) -> (BAUC_a116) ) &
+		( (( (NuInteraction) = (NuI70) )) -> (BAUC_a69) ) &
+		( (( (NuInteraction) = (NuI101) )) -> (BAUC_ahasConfirmed_guard) ) &
+		( (( (NuInteraction) = (NuI69) )) -> (BAUC_a68) ) &
+		( (( (NuInteraction) = (NuI36) )) -> (BAUC_a35) ) &
+		( (( (NuInteraction) = (NuI44) )) -> (BAUC_a43) ) &
+		( (( (NuInteraction) = (NuI68) )) -> (BAUC_a67) ) &
+		( (( (NuInteraction) = (NuI67) )) -> (BAUC_a66) ) &
+		( (( (NuInteraction) = (NuI83) )) -> (BAUC_a82) ) &
+		( (( (NuInteraction) = (NuI115) )) -> (BAUC_a114) ) &
+		( (( (NuInteraction) = (NuI57) )) -> (BAUC_a56) ) &
+		( (( (NuInteraction) = (NuI56) )) -> (BAUC_a55) ) &
+		( (( (NuInteraction) = (NuI75) )) -> (BAUC_a74) ) &
+		( (( (NuInteraction) = (NuI25) )) -> (BAUC_a24) ) &
+		( (( (NuInteraction) = (NuI47) )) -> (BAUC_a46) ) &
+		( (( (NuInteraction) = (NuI65) )) -> (BAUC_a64) ) &
+		( (( (NuInteraction) = (NuI40) )) -> (BAUC_a39) ) &
+		( (( (NuInteraction) = (NuI97) )) -> (BAUC_agetOwner_guard) ) &
+		( (( (NuInteraction) = (NuI108) )) -> (BAUC_a107) ) &
+		( (( (NuInteraction) = (NuI23) )) -> (BAUC_a22) ) &
+		( (( (NuInteraction) = (NuI54) )) -> (BAUC_a53) ) &
+		( (( (NuInteraction) = (NuI53) )) -> (BAUC_a52) ) &
+		( (( (NuInteraction) = (NuI112) )) -> (BAUC_asetDailyLimit_guard) ) &
+		( (( (NuInteraction) = (NuI105) )) -> (BAUC_a104) ) &
+		( (( (NuInteraction) = (NuI88) )) -> (BAUC_a87) ) &
+		( (( (NuInteraction) = (NuI28) )) -> (BAUC_a27) ) &
+		( (( (NuInteraction) = (NuI39) )) -> (BAUC_atoday_guard) ) &
+		( (( (NuInteraction) = (NuI89) )) -> (BAUC_a88) ) &
+		( (( (NuInteraction) = (NuI24) )) -> (BAUC_achangeOwner_guard) ) &
+		( (( (NuInteraction) = (NuI27) )) -> (BAUC_a26) ) &
+		( (( (NuInteraction) = (NuI113) )) -> (BAUC_a112) ) &
+		( (( (NuInteraction) = (NuI62) )) -> (BAUC_aaddOwner_guard) ) &
+		( (( (NuInteraction) = (NuI29) )) -> (BAUC_a28) ) &
+		( (( (NuInteraction) = (NuI73) )) -> (BAUC_a72) ) &
+		( (( (NuInteraction) = (NuI94) )) -> (BAUC_a93) ) &
+		( (( (NuInteraction) = (NuI1) )) -> (BAUC_ainitMultiowned_guard) ) &
+		( (( (NuInteraction) = (NuI2) )) -> (BAUC_a1) ) &
+		( (( (NuInteraction) = (NuI96) )) -> (BAUC_a95) ) &
+		( (( (NuInteraction) = (NuI33) )) -> (BAUC_a32) ) &
+		( (( (NuInteraction) = (NuI50) )) -> (BAUC_a49) ) &
+		( (( (NuInteraction) = (NuI74) )) -> (BAUC_a73) ) &
+		( (( (NuInteraction) = (NuI91) )) -> (BAUC_a90) ) &
+		( (( (NuInteraction) = (NuI109) )) -> (BAUC_ainitDaylimit_guard) ) &
+		( (( (NuInteraction) = (NuI46) )) -> (BAUC_a45) ) &
+		( (( (NuInteraction) = (NuI61) )) -> (BAUC_a60) ) &
+		( (( (NuInteraction) = (NuI11) )) -> (BAUC_a10) ) &
+		( (( (NuInteraction) = (NuI6) )) -> (BAUC_a5) ) &
+		( (( (NuInteraction) = (NuI37) )) -> (BAUC_akill_guard) ) &
+		( (( (NuInteraction) = (NuI66) )) -> (BAUC_a65) ) &
+		( (( (NuInteraction) = (NuI114) )) -> (BAUC_aresetSpentToday_guard) ) &
+		( (( (NuInteraction) = (NuI26) )) -> (BAUC_a25) ) &
+		( (( (NuInteraction) = (NuI102) )) -> (BAUC_a101) ) &
+		( (( (NuInteraction) = (NuI5) )) -> (BAUC_a4) ) &
+		( (( (NuInteraction) = (NuI48) )) -> (BAUC_a47) ) &
+		( (( (NuInteraction) = (NuI41) )) -> (BAUC_aclearPending_guard) ) &
+		( (( (NuInteraction) = (NuI12) )) -> (BAUC_arevoke_guard) ) &
+		( (( (NuInteraction) = (NuI76) )) -> (BAUC_a75) ) &
+		( (( (NuInteraction) = (NuI13) )) -> (BAUC_a12) ) &
+		( (( (NuInteraction) = (NuI32) )) -> (BAUC_a31) ) &
+		( (( (NuInteraction) = (NuI93) )) -> (BAUC_a92) ) &
+		( (( (NuInteraction) = (NuI90) )) -> (BAUC_achangeRequirement_guard) ) &
+		( (( (NuInteraction) = (NuI116) )) -> (BAUC_ainitWallet_guard) ) &
+		( (( (NuInteraction) = (NuI85) )) -> (BAUC_a84) ) &
+		( (( (NuInteraction) = (NuI34) )) -> (BAUC_a33) ) &
+		( (( (NuInteraction) = (NuI49) )) -> (BAUC_a48) ) &
+		( (( (NuInteraction) = (NuI15) )) -> (BAUC_a14) ) &
+		( (( (NuInteraction) = (NuI20) )) -> (BAUC_a19) ) &
+		( (( (NuInteraction) = (NuI98) )) -> (BAUC_a97) ) &
+		( (( (NuInteraction) = (NuI104) )) -> (BAUC_a103) ) &
+		( (( (NuInteraction) = (NuI3) )) -> (BAUC_a2) ) &
+		( (( (NuInteraction) = (NuI30) )) -> (BAUC_a29) ) &
+		( (( (NuInteraction) = (NuI82) )) -> (BAUC_a81) ) &
+		( (( (NuInteraction) = (NuI45) )) -> (BAUC_a44) ) &
+		( (( (NuInteraction) = (NuI60) )) -> (BAUC_a59) ) &
+		( (( (NuInteraction) = (NuI79) )) -> (BAUC_a78) ) &
+		( (( (NuInteraction) = (NuI107) )) -> (BAUC_a106) ) &
+		( (( (NuInteraction) = (NuI52) )) -> (BAUC_aunderLimit_guard) ) &
+		( (( (NuInteraction) = (NuI95) )) -> (BAUC_a94) ) &
+		( (( (NuInteraction) = (NuI80) )) -> (BAUC_a79) ) &
+		( (( (NuInteraction) = (NuI106) )) -> (BAUC_a105) ) &
+		( (( (NuInteraction) = (NuI19) )) -> (BAUC_a18) ) &
+		( (( (NuInteraction) = (NuI18) )) -> (BAUC_a17) ) &
+		( (( (NuInteraction) = (NuI51) )) -> (BAUC_a50) ) &
+		( (( (NuInteraction) = (NuI4) )) -> (BAUC_a3) ) &
+		( (( (NuInteraction) = (NuI111) )) -> (BAUC_a110) ) &
+		( (( (NuInteraction) = (NuI21) )) -> (BAUC_a20) ) &
+		( (( (NuInteraction) = (NuI99) )) -> (BAUC_aisOwner_guard) ) &
+		( (( (NuInteraction) = (NuI42) )) -> (BAUC_a41) ) &
+		( (( (NuInteraction) = (NuI78) )) -> (BAUC_a77) ) &
+		( (( (NuInteraction) = (NuI63) )) -> (BAUC_a62) ) &
+		( (( (NuInteraction) = (NuI17) )) -> (BAUC_a16) ) &
+		( (( (NuInteraction) = (NuI81) )) -> (BAUC_a80) ) &
+		( (( (NuInteraction) = (NuI16) )) -> (BAUC_a15) ) &
+		( (( (NuInteraction) = (NuI72) )) -> (BAUC_a71) ) &
+		( (( (NuInteraction) = (NuI10) )) -> (BAUC_a9) ) &
+		( (( (NuInteraction) = (NuI92) )) -> (BAUC_a91) ) &
+		( (( (NuInteraction) = (NuI110) )) -> (BAUC_a109) ) &
+		( (( (NuInteraction) = (NuI59) )) -> (BAUC_a58) ) &
+		( (( (NuInteraction) = (NuI58) )) -> (BAUC_a57) ) &
+		( (( (NuInteraction) = (NuI64) )) -> (BAUC_a63) ) &
+		( (( (NuInteraction) = (NuI100) )) -> (BAUC_a99) ) &
+		( (( (NuInteraction) = (NuI35) )) -> (BAUC_a34) ) &
+		( (( (NuInteraction) = (NuI55) )) -> (BAUC_a54) ) &
+		( (( (NuInteraction) = (NuI8) )) -> (BAUC_a7) );
+
+
+

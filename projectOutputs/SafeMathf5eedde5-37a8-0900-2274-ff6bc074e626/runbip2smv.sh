@@ -1,0 +1,1 @@
+java -jar /Users/keerthinelaturu/Keerthi/source/smart-contracts/verificationTools/bip-to-nusmv.jar /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/SafeMathf5eedde5-37a8-0900-2274-ff6bc074e626/SafeMath.bip /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/SafeMathf5eedde5-37a8-0900-2274-ff6bc074e626/SafeMath.smv

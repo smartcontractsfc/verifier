@@ -1,0 +1,1 @@
+java -jar /Users/keerthinelaturu/Keerthi/source/smart-contracts/verificationTools/bip-to-nusmv.jar /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/LogicContract2d059c40-3b84-c5d4-9752-2b54dc3e6c6f/LogicContract.bip /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/LogicContract2d059c40-3b84-c5d4-9752-2b54dc3e6c6f/LogicContract.smv

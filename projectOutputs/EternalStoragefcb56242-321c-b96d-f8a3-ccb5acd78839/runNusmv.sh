@@ -1,0 +1,1 @@
+./verificationTools/nuXmv -r /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/EternalStoragefcb56242-321c-b96d-f8a3-ccb5acd78839/EternalStorage.smv >> /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/EternalStoragefcb56242-321c-b96d-f8a3-ccb5acd78839/output.txt

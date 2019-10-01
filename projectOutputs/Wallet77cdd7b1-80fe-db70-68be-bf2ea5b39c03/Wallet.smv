@@ -1,0 +1,78 @@
+MODULE BAUC(active_interaction)
+
+	VAR
+		NuPagetOwner_guard		:		boolean;
+		NuPa1		:		boolean;
+		NuPahasConfirmed_guard		:		boolean;
+		NuPa3		:		boolean;
+		NuPaisOwner_guard		:		boolean;
+		NuPa5		:		boolean;
+		NuPaWallet_guard		:		boolean;
+		NuPa7		:		boolean;
+		NuPa8		:		boolean;
+		NuPa9		:		boolean;
+		Nuplace		:		{NuSInitialState, NuSgetOwner, NuShasConfirmed, NuSisOwner, NuSWallet, NuSs5_1, NuSs5_2};
+
+
+	INIT
+		( (Nuplace) = (NuSInitialState) );
+
+	INVAR
+		( (NuPa7) <-> (( (Nuplace) = (NuSWallet) )) ) &
+		( (NuPa8) <-> (( (Nuplace) = (NuSs5_1) )) ) &
+		( (NuPa5) <-> (( (Nuplace) = (NuSisOwner) )) ) &
+		( (NuPagetOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa3) <-> (( (Nuplace) = (NuShasConfirmed) )) ) &
+		( (NuPaisOwner_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa1) <-> (( (Nuplace) = (NuSgetOwner) )) ) &
+		( (NuPahasConfirmed_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPaWallet_guard) <-> (( (Nuplace) = (NuSInitialState) )) ) &
+		( (NuPa9) <-> (( (Nuplace) = (NuSs5_2) )) );
+
+	TRANS
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSgetOwner) )) )) & (( (active_interaction) = (NuI1) )) ) |
+		( (( (( (Nuplace) = (NuSgetOwner) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI2) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuShasConfirmed) )) )) & (( (active_interaction) = (NuI3) )) ) |
+		( (( (( (Nuplace) = (NuShasConfirmed) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI4) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSisOwner) )) )) & (( (active_interaction) = (NuI5) )) ) |
+		( (( (( (Nuplace) = (NuSisOwner) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI6) )) ) |
+		( (( (( (Nuplace) = (NuSInitialState) )) & (( (next(Nuplace)) = (NuSWallet) )) )) & (( (active_interaction) = (NuI7) )) ) |
+		( (( (( (Nuplace) = (NuSWallet) )) & (( (next(Nuplace)) = (NuSs5_1) )) )) & (( (active_interaction) = (NuI8) )) ) |
+		( (( (( (Nuplace) = (NuSs5_1) )) & (( (next(Nuplace)) = (NuSs5_2) )) )) & (( (active_interaction) = (NuI9) )) ) |
+		( (( (( (Nuplace) = (NuSs5_2) )) & (( (next(Nuplace)) = (NuSInitialState) )) )) & (( (active_interaction) = (NuI10) )) ) |
+		( (( (active_interaction) != (NuI10) )) & (( (( (active_interaction) != (NuI9) )) & (( (( (active_interaction) != (NuI8) )) & (( (( (active_interaction) != (NuI7) )) & (( (( (active_interaction) != (NuI6) )) & (( (( (active_interaction) != (NuI5) )) & (( (( (active_interaction) != (NuI4) )) & (( (( (active_interaction) != (NuI3) )) & (( (( (active_interaction) != (NuI2) )) & (( (( (active_interaction) != (NuI1) )) & (( (next(Nuplace)) = (Nuplace) )) )) )) )) )) )) )) )) )) )) );
+
+
+MODULE main
+
+	VAR
+		NuInteraction		:		{NuI1, NuI2, NuI3, NuI4, NuI5, NuI6, NuI7, NuI8, NuI9, NuI10};
+		bauc	:	BAUC(NuInteraction);
+
+	DEFINE
+		BAUC_a1		:=		bauc.NuPa1;
+		BAUC_ahasConfirmed_guard		:=		bauc.NuPahasConfirmed_guard;
+		BAUC_a7		:=		bauc.NuPa7;
+		BAUC_aWallet_guard		:=		bauc.NuPaWallet_guard;
+		BAUC_agetOwner_guard		:=		bauc.NuPagetOwner_guard;
+		BAUC_a8		:=		bauc.NuPa8;
+		BAUC_a5		:=		bauc.NuPa5;
+		BAUC_a9		:=		bauc.NuPa9;
+		BAUC_a3		:=		bauc.NuPa3;
+		BAUC_aisOwner_guard		:=		bauc.NuPaisOwner_guard;
+
+
+	INVAR
+		( (( (NuInteraction) = (NuI2) )) -> (BAUC_a1) ) &
+		( (( (NuInteraction) = (NuI3) )) -> (BAUC_ahasConfirmed_guard) ) &
+		( (( (NuInteraction) = (NuI8) )) -> (BAUC_a7) ) &
+		( (( (NuInteraction) = (NuI7) )) -> (BAUC_aWallet_guard) ) &
+		( (( (NuInteraction) = (NuI1) )) -> (BAUC_agetOwner_guard) ) &
+		( (( (NuInteraction) = (NuI9) )) -> (BAUC_a8) ) &
+		( (( (NuInteraction) = (NuI6) )) -> (BAUC_a5) ) &
+		( (( (NuInteraction) = (NuI10) )) -> (BAUC_a9) ) &
+		( (( (NuInteraction) = (NuI4) )) -> (BAUC_a3) ) &
+		( (( (NuInteraction) = (NuI5) )) -> (BAUC_aisOwner_guard) );
+
+
+

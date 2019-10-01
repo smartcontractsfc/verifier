@@ -1,0 +1,1 @@
+./verificationTools/nuXmv -r /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/SafeMathf5eedde5-37a8-0900-2274-ff6bc074e626/SafeMath.smv >> /Users/keerthinelaturu/Keerthi/source/smart-contracts/projectOutputs/SafeMathf5eedde5-37a8-0900-2274-ff6bc074e626/output.txt

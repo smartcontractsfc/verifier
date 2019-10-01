@@ -1,0 +1,612 @@
+model ItemsStorageModel
+
+	port type syncPort
+
+  connector type SINGLE(syncPort p1)
+    define p1
+  end
+
+atomic type ItemsStorage
+
+
+export port syncPort agetRadarsIds_guard 
+export port syncPort a1 
+export port syncPort agetUsersArtefactsIds_guard 
+export port syncPort a3 
+export port syncPort agetDroidsIds_guard 
+export port syncPort a5 
+export port syncPort agetUsersEnginesIds_guard 
+export port syncPort a7 
+export port syncPort aaddItem_guard 
+export port syncPort a9 
+export port syncPort a10 
+export port syncPort a11 
+export port syncPort a12 
+export port syncPort a13 
+export port syncPort a14 
+export port syncPort a15 
+export port syncPort a16 
+export port syncPort a17 
+export port syncPort a18 
+export port syncPort a19 
+export port syncPort a20 
+export port syncPort a21 
+export port syncPort a22 
+export port syncPort a23 
+export port syncPort a24 
+export port syncPort a25 
+export port syncPort a26 
+export port syncPort a27 
+export port syncPort a28 
+export port syncPort a29 
+export port syncPort a30 
+export port syncPort a31 
+export port syncPort a32 
+export port syncPort a33 
+export port syncPort a34 
+export port syncPort a35 
+export port syncPort a36 
+export port syncPort a37 
+export port syncPort a38 
+export port syncPort a39 
+export port syncPort a40 
+export port syncPort a41 
+export port syncPort a42 
+export port syncPort a43 
+export port syncPort a44 
+export port syncPort a45 
+export port syncPort a46 
+export port syncPort a_transferOwnershipOfItemsStorage_guard 
+export port syncPort a48 
+export port syncPort a49 
+export port syncPort agetUsersRadarsIds_guard 
+export port syncPort a51 
+export port syncPort achangeLogicContractAddress_guard 
+export port syncPort a53 
+export port syncPort a_changeLogicContractAddress_guard 
+export port syncPort a55 
+export port syncPort a56 
+export port syncPort achangeEternalStorageContractAddress_guard 
+export port syncPort a58 
+export port syncPort a_changeEternalStorageContractAddress_guard 
+export port syncPort a60 
+export port syncPort a61 
+export port syncPort a_compareStrings _guard 
+export port syncPort a63 
+export port syncPort agetUsersShipsIds_guard 
+export port syncPort a65 
+export port syncPort agetUsersScannersIds_guard 
+export port syncPort a67 
+export port syncPort agetUsersDroidsIds_guard 
+export port syncPort a69 
+export port syncPort agetUsersFuelsIds_guard 
+export port syncPort a71 
+export port syncPort agetUsersGeneratorsIds_guard 
+export port syncPort a73 
+export port syncPort agetUsersGunsIds_guard 
+export port syncPort a75 
+export port syncPort agetUsersMicroModulesIds_guard 
+export port syncPort a77 
+export port syncPort agetShipsIds_guard 
+export port syncPort a79 
+export port syncPort agetScannersIds_guard 
+export port syncPort a81 
+export port syncPort agetEnginesIds_guard 
+export port syncPort a83 
+export port syncPort agetFuelsIds_guard 
+export port syncPort a85 
+export port syncPort agetGeneratorsIds_guard 
+export port syncPort a87 
+export port syncPort agetGunsIds_guard 
+export port syncPort a89 
+export port syncPort agetMicroModulesIds_guard 
+export port syncPort a91 
+export port syncPort agetArtefactsIds_guard 
+export port syncPort a93 
+export port syncPort acreateShip_guard 
+export port syncPort a95 
+export port syncPort acreateRadar_guard 
+export port syncPort a97 
+export port syncPort acreateScanner_guard 
+export port syncPort a99 
+export port syncPort acreateDroid_guard 
+export port syncPort a101 
+export port syncPort acreateFuel_guard 
+export port syncPort a103 
+export port syncPort acreateGenerator_guard 
+export port syncPort a105 
+export port syncPort acreateEngine_guard 
+export port syncPort a107 
+export port syncPort acreateGun_guard 
+export port syncPort a109 
+export port syncPort acreateMicroModule_guard 
+export port syncPort a111 
+export port syncPort acreateArtefact_guard 
+export port syncPort a113 
+export port syncPort atransferOwnershipOfItemsStorage_guard 
+export port syncPort a115 
+
+  place  InitialState,  getRadarsIds,  getUsersArtefactsIds,  getDroidsIds,  getUsersEnginesIds,  addItem,  s6_1,  s6_2,  s8_T,  s9_1,  s8_F,  s11_T,  s12_1,  s11_F,  s14_T,  s15_1,  s14_F,  s17_T,  s18_1,  s17_F,  s20_T,  s21_1,  s20_F,  s23_T,  s24_1,  s23_F,  s26_T,  s27_1,  s26_F,  s29_T,  s30_1,  s29_F,  s32_T,  s33_1,  _transferOwnershipOfItemsStorage,  s35_1,  getUsersRadarsIds,  changeLogicContractAddress,  _changeLogicContractAddress,  s39_1,  changeEternalStorageContractAddress,  _changeEternalStorageContractAddress,  s42_1,  _compareStrings ,  getUsersShipsIds,  getUsersScannersIds,  getUsersDroidsIds,  getUsersFuelsIds,  getUsersGeneratorsIds,  getUsersGunsIds,  getUsersMicroModulesIds,  getShipsIds,  getScannersIds,  getEnginesIds,  getFuelsIds,  getGeneratorsIds,  getGunsIds,  getMicroModulesIds,  getArtefactsIds,  createShip,  createRadar,  createScanner,  createDroid,  createFuel,  createGenerator,  createEngine,  createGun,  createMicroModule,  createArtefact,  transferOwnershipOfItemsStorage 
+
+initial to InitialState 
+
+
+on agetRadarsIds_guard from InitialState to getRadarsIds
+
+on a1 from getRadarsIds to InitialState
+
+on agetUsersArtefactsIds_guard from InitialState to getUsersArtefactsIds
+
+on a3 from getUsersArtefactsIds to InitialState
+
+on agetDroidsIds_guard from InitialState to getDroidsIds
+
+on a5 from getDroidsIds to InitialState
+
+on agetUsersEnginesIds_guard from InitialState to getUsersEnginesIds
+
+on a7 from getUsersEnginesIds to InitialState
+
+on aaddItem_guard from InitialState to addItem
+
+on a9 from addItem to s6_1
+
+on a10 from s6_1 to s8_T
+
+on a11 from s8_T to s9_1
+
+on a12 from s9_1 to s6_2
+
+on a13 from s6_1 to s8_F
+
+on a14 from s8_F to s11_T
+
+on a15 from s11_T to s12_1
+
+on a16 from s12_1 to s6_2
+
+on a17 from s8_F to s11_F
+
+on a18 from s11_F to s14_T
+
+on a19 from s14_T to s15_1
+
+on a20 from s15_1 to s6_2
+
+on a21 from s11_F to s14_F
+
+on a22 from s14_F to s17_T
+
+on a23 from s17_T to s18_1
+
+on a24 from s18_1 to s6_2
+
+on a25 from s14_F to s17_F
+
+on a26 from s17_F to s20_T
+
+on a27 from s20_T to s21_1
+
+on a28 from s21_1 to s6_2
+
+on a29 from s17_F to s20_F
+
+on a30 from s20_F to s23_T
+
+on a31 from s23_T to s24_1
+
+on a32 from s24_1 to s6_2
+
+on a33 from s20_F to s23_F
+
+on a34 from s23_F to s26_T
+
+on a35 from s26_T to s27_1
+
+on a36 from s27_1 to s6_2
+
+on a37 from s23_F to s26_F
+
+on a38 from s26_F to s29_T
+
+on a39 from s29_T to s30_1
+
+on a40 from s30_1 to s6_2
+
+on a41 from s26_F to s29_F
+
+on a42 from s29_F to s32_T
+
+on a43 from s32_T to s33_1
+
+on a44 from s33_1 to s6_2
+
+on a45 from s29_F to s6_2
+
+on a46 from s6_2 to InitialState
+
+on a_transferOwnershipOfItemsStorage_guard from InitialState to _transferOwnershipOfItemsStorage
+
+on a48 from _transferOwnershipOfItemsStorage to s35_1
+
+on a49 from s35_1 to InitialState
+
+on agetUsersRadarsIds_guard from InitialState to getUsersRadarsIds
+
+on a51 from getUsersRadarsIds to InitialState
+
+on achangeLogicContractAddress_guard from InitialState to changeLogicContractAddress
+
+on a53 from changeLogicContractAddress to InitialState
+
+on a_changeLogicContractAddress_guard from InitialState to _changeLogicContractAddress
+
+on a55 from _changeLogicContractAddress to s39_1
+
+on a56 from s39_1 to InitialState
+
+on achangeEternalStorageContractAddress_guard from InitialState to changeEternalStorageContractAddress
+
+on a58 from changeEternalStorageContractAddress to InitialState
+
+on a_changeEternalStorageContractAddress_guard from InitialState to _changeEternalStorageContractAddress
+
+on a60 from _changeEternalStorageContractAddress to s42_1
+
+on a61 from s42_1 to InitialState
+
+on a_compareStrings _guard from InitialState to _compareStrings 
+
+on a63 from _compareStrings  to InitialState
+
+on agetUsersShipsIds_guard from InitialState to getUsersShipsIds
+
+on a65 from getUsersShipsIds to InitialState
+
+on agetUsersScannersIds_guard from InitialState to getUsersScannersIds
+
+on a67 from getUsersScannersIds to InitialState
+
+on agetUsersDroidsIds_guard from InitialState to getUsersDroidsIds
+
+on a69 from getUsersDroidsIds to InitialState
+
+on agetUsersFuelsIds_guard from InitialState to getUsersFuelsIds
+
+on a71 from getUsersFuelsIds to InitialState
+
+on agetUsersGeneratorsIds_guard from InitialState to getUsersGeneratorsIds
+
+on a73 from getUsersGeneratorsIds to InitialState
+
+on agetUsersGunsIds_guard from InitialState to getUsersGunsIds
+
+on a75 from getUsersGunsIds to InitialState
+
+on agetUsersMicroModulesIds_guard from InitialState to getUsersMicroModulesIds
+
+on a77 from getUsersMicroModulesIds to InitialState
+
+on agetShipsIds_guard from InitialState to getShipsIds
+
+on a79 from getShipsIds to InitialState
+
+on agetScannersIds_guard from InitialState to getScannersIds
+
+on a81 from getScannersIds to InitialState
+
+on agetEnginesIds_guard from InitialState to getEnginesIds
+
+on a83 from getEnginesIds to InitialState
+
+on agetFuelsIds_guard from InitialState to getFuelsIds
+
+on a85 from getFuelsIds to InitialState
+
+on agetGeneratorsIds_guard from InitialState to getGeneratorsIds
+
+on a87 from getGeneratorsIds to InitialState
+
+on agetGunsIds_guard from InitialState to getGunsIds
+
+on a89 from getGunsIds to InitialState
+
+on agetMicroModulesIds_guard from InitialState to getMicroModulesIds
+
+on a91 from getMicroModulesIds to InitialState
+
+on agetArtefactsIds_guard from InitialState to getArtefactsIds
+
+on a93 from getArtefactsIds to InitialState
+
+on acreateShip_guard from InitialState to createShip
+
+on a95 from createShip to InitialState
+
+on acreateRadar_guard from InitialState to createRadar
+
+on a97 from createRadar to InitialState
+
+on acreateScanner_guard from InitialState to createScanner
+
+on a99 from createScanner to InitialState
+
+on acreateDroid_guard from InitialState to createDroid
+
+on a101 from createDroid to InitialState
+
+on acreateFuel_guard from InitialState to createFuel
+
+on a103 from createFuel to InitialState
+
+on acreateGenerator_guard from InitialState to createGenerator
+
+on a105 from createGenerator to InitialState
+
+on acreateEngine_guard from InitialState to createEngine
+
+on a107 from createEngine to InitialState
+
+on acreateGun_guard from InitialState to createGun
+
+on a109 from createGun to InitialState
+
+on acreateMicroModule_guard from InitialState to createMicroModule
+
+on a111 from createMicroModule to InitialState
+
+on acreateArtefact_guard from InitialState to createArtefact
+
+on a113 from createArtefact to InitialState
+
+on atransferOwnershipOfItemsStorage_guard from InitialState to transferOwnershipOfItemsStorage
+
+on a115 from transferOwnershipOfItemsStorage to InitialState
+
+
+end
+
+compound type globModel
+
+  component ItemsStorage BAUC
+
+  
+  connector SINGLE BAUC_agetRadarsIds_guard ( BAUC.agetRadarsIds_guard )
+  
+  connector SINGLE BAUC_a1 ( BAUC.a1 )
+  
+  connector SINGLE BAUC_agetUsersArtefactsIds_guard ( BAUC.agetUsersArtefactsIds_guard )
+  
+  connector SINGLE BAUC_a3 ( BAUC.a3 )
+  
+  connector SINGLE BAUC_agetDroidsIds_guard ( BAUC.agetDroidsIds_guard )
+  
+  connector SINGLE BAUC_a5 ( BAUC.a5 )
+  
+  connector SINGLE BAUC_agetUsersEnginesIds_guard ( BAUC.agetUsersEnginesIds_guard )
+  
+  connector SINGLE BAUC_a7 ( BAUC.a7 )
+  
+  connector SINGLE BAUC_aaddItem_guard ( BAUC.aaddItem_guard )
+  
+  connector SINGLE BAUC_a9 ( BAUC.a9 )
+  
+  connector SINGLE BAUC_a10 ( BAUC.a10 )
+  
+  connector SINGLE BAUC_a11 ( BAUC.a11 )
+  
+  connector SINGLE BAUC_a12 ( BAUC.a12 )
+  
+  connector SINGLE BAUC_a13 ( BAUC.a13 )
+  
+  connector SINGLE BAUC_a14 ( BAUC.a14 )
+  
+  connector SINGLE BAUC_a15 ( BAUC.a15 )
+  
+  connector SINGLE BAUC_a16 ( BAUC.a16 )
+  
+  connector SINGLE BAUC_a17 ( BAUC.a17 )
+  
+  connector SINGLE BAUC_a18 ( BAUC.a18 )
+  
+  connector SINGLE BAUC_a19 ( BAUC.a19 )
+  
+  connector SINGLE BAUC_a20 ( BAUC.a20 )
+  
+  connector SINGLE BAUC_a21 ( BAUC.a21 )
+  
+  connector SINGLE BAUC_a22 ( BAUC.a22 )
+  
+  connector SINGLE BAUC_a23 ( BAUC.a23 )
+  
+  connector SINGLE BAUC_a24 ( BAUC.a24 )
+  
+  connector SINGLE BAUC_a25 ( BAUC.a25 )
+  
+  connector SINGLE BAUC_a26 ( BAUC.a26 )
+  
+  connector SINGLE BAUC_a27 ( BAUC.a27 )
+  
+  connector SINGLE BAUC_a28 ( BAUC.a28 )
+  
+  connector SINGLE BAUC_a29 ( BAUC.a29 )
+  
+  connector SINGLE BAUC_a30 ( BAUC.a30 )
+  
+  connector SINGLE BAUC_a31 ( BAUC.a31 )
+  
+  connector SINGLE BAUC_a32 ( BAUC.a32 )
+  
+  connector SINGLE BAUC_a33 ( BAUC.a33 )
+  
+  connector SINGLE BAUC_a34 ( BAUC.a34 )
+  
+  connector SINGLE BAUC_a35 ( BAUC.a35 )
+  
+  connector SINGLE BAUC_a36 ( BAUC.a36 )
+  
+  connector SINGLE BAUC_a37 ( BAUC.a37 )
+  
+  connector SINGLE BAUC_a38 ( BAUC.a38 )
+  
+  connector SINGLE BAUC_a39 ( BAUC.a39 )
+  
+  connector SINGLE BAUC_a40 ( BAUC.a40 )
+  
+  connector SINGLE BAUC_a41 ( BAUC.a41 )
+  
+  connector SINGLE BAUC_a42 ( BAUC.a42 )
+  
+  connector SINGLE BAUC_a43 ( BAUC.a43 )
+  
+  connector SINGLE BAUC_a44 ( BAUC.a44 )
+  
+  connector SINGLE BAUC_a45 ( BAUC.a45 )
+  
+  connector SINGLE BAUC_a46 ( BAUC.a46 )
+  
+  connector SINGLE BAUC_a_transferOwnershipOfItemsStorage_guard ( BAUC.a_transferOwnershipOfItemsStorage_guard )
+  
+  connector SINGLE BAUC_a48 ( BAUC.a48 )
+  
+  connector SINGLE BAUC_a49 ( BAUC.a49 )
+  
+  connector SINGLE BAUC_agetUsersRadarsIds_guard ( BAUC.agetUsersRadarsIds_guard )
+  
+  connector SINGLE BAUC_a51 ( BAUC.a51 )
+  
+  connector SINGLE BAUC_achangeLogicContractAddress_guard ( BAUC.achangeLogicContractAddress_guard )
+  
+  connector SINGLE BAUC_a53 ( BAUC.a53 )
+  
+  connector SINGLE BAUC_a_changeLogicContractAddress_guard ( BAUC.a_changeLogicContractAddress_guard )
+  
+  connector SINGLE BAUC_a55 ( BAUC.a55 )
+  
+  connector SINGLE BAUC_a56 ( BAUC.a56 )
+  
+  connector SINGLE BAUC_achangeEternalStorageContractAddress_guard ( BAUC.achangeEternalStorageContractAddress_guard )
+  
+  connector SINGLE BAUC_a58 ( BAUC.a58 )
+  
+  connector SINGLE BAUC_a_changeEternalStorageContractAddress_guard ( BAUC.a_changeEternalStorageContractAddress_guard )
+  
+  connector SINGLE BAUC_a60 ( BAUC.a60 )
+  
+  connector SINGLE BAUC_a61 ( BAUC.a61 )
+  
+  connector SINGLE BAUC_a_compareStrings _guard ( BAUC.a_compareStrings _guard )
+  
+  connector SINGLE BAUC_a63 ( BAUC.a63 )
+  
+  connector SINGLE BAUC_agetUsersShipsIds_guard ( BAUC.agetUsersShipsIds_guard )
+  
+  connector SINGLE BAUC_a65 ( BAUC.a65 )
+  
+  connector SINGLE BAUC_agetUsersScannersIds_guard ( BAUC.agetUsersScannersIds_guard )
+  
+  connector SINGLE BAUC_a67 ( BAUC.a67 )
+  
+  connector SINGLE BAUC_agetUsersDroidsIds_guard ( BAUC.agetUsersDroidsIds_guard )
+  
+  connector SINGLE BAUC_a69 ( BAUC.a69 )
+  
+  connector SINGLE BAUC_agetUsersFuelsIds_guard ( BAUC.agetUsersFuelsIds_guard )
+  
+  connector SINGLE BAUC_a71 ( BAUC.a71 )
+  
+  connector SINGLE BAUC_agetUsersGeneratorsIds_guard ( BAUC.agetUsersGeneratorsIds_guard )
+  
+  connector SINGLE BAUC_a73 ( BAUC.a73 )
+  
+  connector SINGLE BAUC_agetUsersGunsIds_guard ( BAUC.agetUsersGunsIds_guard )
+  
+  connector SINGLE BAUC_a75 ( BAUC.a75 )
+  
+  connector SINGLE BAUC_agetUsersMicroModulesIds_guard ( BAUC.agetUsersMicroModulesIds_guard )
+  
+  connector SINGLE BAUC_a77 ( BAUC.a77 )
+  
+  connector SINGLE BAUC_agetShipsIds_guard ( BAUC.agetShipsIds_guard )
+  
+  connector SINGLE BAUC_a79 ( BAUC.a79 )
+  
+  connector SINGLE BAUC_agetScannersIds_guard ( BAUC.agetScannersIds_guard )
+  
+  connector SINGLE BAUC_a81 ( BAUC.a81 )
+  
+  connector SINGLE BAUC_agetEnginesIds_guard ( BAUC.agetEnginesIds_guard )
+  
+  connector SINGLE BAUC_a83 ( BAUC.a83 )
+  
+  connector SINGLE BAUC_agetFuelsIds_guard ( BAUC.agetFuelsIds_guard )
+  
+  connector SINGLE BAUC_a85 ( BAUC.a85 )
+  
+  connector SINGLE BAUC_agetGeneratorsIds_guard ( BAUC.agetGeneratorsIds_guard )
+  
+  connector SINGLE BAUC_a87 ( BAUC.a87 )
+  
+  connector SINGLE BAUC_agetGunsIds_guard ( BAUC.agetGunsIds_guard )
+  
+  connector SINGLE BAUC_a89 ( BAUC.a89 )
+  
+  connector SINGLE BAUC_agetMicroModulesIds_guard ( BAUC.agetMicroModulesIds_guard )
+  
+  connector SINGLE BAUC_a91 ( BAUC.a91 )
+  
+  connector SINGLE BAUC_agetArtefactsIds_guard ( BAUC.agetArtefactsIds_guard )
+  
+  connector SINGLE BAUC_a93 ( BAUC.a93 )
+  
+  connector SINGLE BAUC_acreateShip_guard ( BAUC.acreateShip_guard )
+  
+  connector SINGLE BAUC_a95 ( BAUC.a95 )
+  
+  connector SINGLE BAUC_acreateRadar_guard ( BAUC.acreateRadar_guard )
+  
+  connector SINGLE BAUC_a97 ( BAUC.a97 )
+  
+  connector SINGLE BAUC_acreateScanner_guard ( BAUC.acreateScanner_guard )
+  
+  connector SINGLE BAUC_a99 ( BAUC.a99 )
+  
+  connector SINGLE BAUC_acreateDroid_guard ( BAUC.acreateDroid_guard )
+  
+  connector SINGLE BAUC_a101 ( BAUC.a101 )
+  
+  connector SINGLE BAUC_acreateFuel_guard ( BAUC.acreateFuel_guard )
+  
+  connector SINGLE BAUC_a103 ( BAUC.a103 )
+  
+  connector SINGLE BAUC_acreateGenerator_guard ( BAUC.acreateGenerator_guard )
+  
+  connector SINGLE BAUC_a105 ( BAUC.a105 )
+  
+  connector SINGLE BAUC_acreateEngine_guard ( BAUC.acreateEngine_guard )
+  
+  connector SINGLE BAUC_a107 ( BAUC.a107 )
+  
+  connector SINGLE BAUC_acreateGun_guard ( BAUC.acreateGun_guard )
+  
+  connector SINGLE BAUC_a109 ( BAUC.a109 )
+  
+  connector SINGLE BAUC_acreateMicroModule_guard ( BAUC.acreateMicroModule_guard )
+  
+  connector SINGLE BAUC_a111 ( BAUC.a111 )
+  
+  connector SINGLE BAUC_acreateArtefact_guard ( BAUC.acreateArtefact_guard )
+  
+  connector SINGLE BAUC_a113 ( BAUC.a113 )
+  
+  connector SINGLE BAUC_atransferOwnershipOfItemsStorage_guard ( BAUC.atransferOwnershipOfItemsStorage_guard )
+  
+  connector SINGLE BAUC_a115 ( BAUC.a115 )
+  
+
+  end
+
+  component globModel Root
+
+  end
+

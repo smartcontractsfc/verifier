@@ -1,0 +1,82 @@
+model WalletModel
+
+	port type syncPort
+
+  connector type SINGLE(syncPort p1)
+    define p1
+  end
+
+atomic type Wallet
+
+
+export port syncPort agetOwner_guard 
+export port syncPort a1 
+export port syncPort ahasConfirmed_guard 
+export port syncPort a3 
+export port syncPort aisOwner_guard 
+export port syncPort a5 
+export port syncPort aWallet_guard 
+export port syncPort a7 
+export port syncPort a8 
+export port syncPort a9 
+
+  place  InitialState,  getOwner,  hasConfirmed,  isOwner,  Wallet,  s5_1,  s5_2 
+
+initial to InitialState 
+
+
+on agetOwner_guard from InitialState to getOwner
+
+on a1 from getOwner to InitialState
+
+on ahasConfirmed_guard from InitialState to hasConfirmed
+
+on a3 from hasConfirmed to InitialState
+
+on aisOwner_guard from InitialState to isOwner
+
+on a5 from isOwner to InitialState
+
+on aWallet_guard from InitialState to Wallet
+
+on a7 from Wallet to s5_1
+
+on a8 from s5_1 to s5_2
+
+on a9 from s5_2 to InitialState
+
+
+end
+
+compound type globModel
+
+  component Wallet BAUC
+
+  
+  connector SINGLE BAUC_agetOwner_guard ( BAUC.agetOwner_guard )
+  
+  connector SINGLE BAUC_a1 ( BAUC.a1 )
+  
+  connector SINGLE BAUC_ahasConfirmed_guard ( BAUC.ahasConfirmed_guard )
+  
+  connector SINGLE BAUC_a3 ( BAUC.a3 )
+  
+  connector SINGLE BAUC_aisOwner_guard ( BAUC.aisOwner_guard )
+  
+  connector SINGLE BAUC_a5 ( BAUC.a5 )
+  
+  connector SINGLE BAUC_aWallet_guard ( BAUC.aWallet_guard )
+  
+  connector SINGLE BAUC_a7 ( BAUC.a7 )
+  
+  connector SINGLE BAUC_a8 ( BAUC.a8 )
+  
+  connector SINGLE BAUC_a9 ( BAUC.a9 )
+  
+
+  end
+
+  component globModel Root
+
+  end
+

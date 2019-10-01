@@ -1,0 +1,134 @@
+contract RockPaperScissors {
+  uint private creationTime = now;
+  
+  
+
+  //States definition
+  enum States {
+    InTransition,
+    Play, 
+    Canceled, 
+    Finished, 
+    Reveal  
+  }
+  States private state = States.Play;
+  //Insert variable definitions
+
+  struct player {
+      bytes32 choiceHash;
+      address addr;
+      bool revealed;
+      uint choice;
+  }
+  player[] private players;
+//Transitions 
+function cancelPlay () public
+ 
+{
+    require(state == States.Play);
+   //Guards
+    require( players.length == 1);     
+    //State change
+    state = States.Canceled; 
+}
+
+function cancelReveal () public
+ 
+{
+    require(state == States.Reveal);
+   //Guards
+    require(players[0].revealed != players[1].revealed && now >= creationTime + 2 days );     
+    //State change
+    state = States.Canceled; 
+}
+
+function choose (    bytes32 choiceHash) public
+ payable  
+{
+    require(state == States.Play);
+   //Guards
+    require(msg.value == 1 ether && players.length < 2 && now <= creationTime + 1 days);   
+    //State change
+    state = States.InTransition;
+    //Actions
+          players.push(player({
+       choiceHash: choiceHash,
+       addr: msg.sender,
+       revealed: false,
+       choice: 0
+    }));   
+    //State change
+    state = States.Play; 
+}
+
+function close () public
+ 
+{
+    require(state == States.Play);
+   //Guards
+    require(players.length == 2);     
+    //State change
+    state = States.Reveal; 
+}
+
+function finish () public
+ 
+{
+    require(state == States.Reveal);
+   //Guards
+    require(players[0].revealed && players[1].revealed);     
+    //State change
+    state = States.Finished; 
+}
+
+function reveal (uint playerID, uint choice, bytes32 random  ) public
+ 
+{
+    require(state == States.Reveal);
+   //Guards
+    require(players[playerID].addr == msg.sender && players[playerID].choiceHash == keccak256(choice, random));   
+    //State change
+    state = States.InTransition;
+    //Actions
+     players[playerID].choice = choice;
+    players[playerID].revealed = true;     
+    //State change
+    state = States.Reveal; 
+}
+
+function withdrawCanceled (       uint playerID
+    ) public
+ 
+{
+    require(state == States.Canceled);
+   //Guards
+    require( players[playerID].addr == msg.sender && (players.length == 1) || (players[playerID].revealed));   
+    //State change
+    state = States.InTransition;
+    //Actions
+        players[playerID].addr = this; 
+    msg.sender.transfer(players.length == 1 ?
+      1 ether : 
+      2 ether
+    );     
+    //State change
+    state = States.Canceled; 
+}
+
+function withdrawFinished (  uint playerID) public
+ 
+{
+    require(state == States.Finished);
+   //Guards
+    require(       players[playerID].addr == msg .sender && ((players[0].choice + players[1].choice) % 2) == playerID);   
+    //State change
+    state = States.InTransition;
+    //Actions
+        players[playerID].addr = this;
+    msg.sender.transfer(2 ether);      
+    //State change
+    state = States.Finished; 
+}
+
+
+}
