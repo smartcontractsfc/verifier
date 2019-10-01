@@ -1,0 +1,14 @@
+ function <%- name %> (<%- input %>)
+<% if (locking) { %> locking<% } %><% if (counter) { %> transitionCounting(nextTransitionNumber)<% } %>
+<%if (tags != '') {%> <%- tags %> <% } %> <%if (output != '') {%> returns (<%- output %>) <% } %>
+{
+    require(state == States.<%- src %>);
+  <%if (guards != '') {%> //Guards
+    require(<%- guards %>); <% } %>  <%if (statements != '') {%>
+      //State change
+      state = States.InTransition;
+      //Actions
+      <%- statements %> <% } %>  <%if ((src != dst) || (statements != '')) {%>
+    //State change
+    state = States.<%- dst %>; <% } %>
+}
