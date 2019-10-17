@@ -47,3 +47,39 @@ Click `Create New…` to create a new project.
 After entering a project name of your choice, import the seed `SC_new` to start working on smart contracts!
 
 IMPORTANT: To use the VerifyContract plugin, please download the nuXmv tool (version 1.1.1) from https://es-static.fbk.eu/tools/nuxmv/index.php?n=Download.Download and just add it in the smart-contracts/verificationTools folder.
+
+##Steps for Deployment 
+
+* Copy solidity code into Solidity Editor. Press Ctrl + S to create the FSM.
+
+![Solidity Code Editor](./img/S1.png)
+
+* Select ContractDeployments node available in the tree to the right of WebGME.
+
+![Contract Deployments Module](./img/S2.png)
+
+* Create a new child and name the deployment. Select the new child node and go to the Deployment Editor. In the editor, Contract Types, and their Associations. 
+
+![Deployment Editor](./img/S3.png)
+
+* In the object browser, select contract type will allow you to set the cardinality and constructor values. 
+
+![Cardinality in Object Browser](./img/S4.png)
+
+* Select the Association in the object browser to set the degree for the Association. 
+
+![Degree of an Association](./img/S5.png)
+
+* Network information can be provided in ./src/solidityscripts/runsol.js. Under the plugins, RunDeployment plugin can be used to start the deployment. 
+
+![Run Deployment Plugin](./img/S6.png)
+
+![Run Deployment Plugin Execute](./img/S7.png)
+
+* Upon successful deployment a message is displayed with addresses of the deployed contracts. 
+
+![Successful Deployment](./img/S8.png)
+
+![Successful Deployment Results](./img/S9.png)
+
+
