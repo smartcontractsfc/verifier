@@ -48,7 +48,7 @@ After entering a project name of your choice, import the seed `SC_new` to start 
 
 IMPORTANT: To use the VerifyContract plugin, please download the nuXmv tool (version 1.1.1) from https://es-static.fbk.eu/tools/nuxmv/index.php?n=Download.Download and just add it in the smart-contracts/verificationTools folder.
 
-##Steps for Deployment 
+## Steps for Deployment 
 
 * Copy solidity code into Solidity Editor. Press Ctrl + S to create the FSM.
 
